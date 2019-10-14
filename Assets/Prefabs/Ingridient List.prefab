@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3305690489025107264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3305690489025107270}
+  - component: {fileID: 3305690489025107271}
+  m_Layer: 0
+  m_Name: Ingridient List
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3305690489025107270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305690489025107264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 146.15768, y: 480.94934, z: -385.1875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3305690489025107271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305690489025107264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a06d73a8d957f14fa0b6e1cd6e09e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueIngridient: 0a0000000b0000000800000007000000130000000200000003000000020000000c0000000b0000000e0000000b0000000c0000000c0000000e0000000d0000000e0000000c00000013000000130000000c0000001100000011000000120000000c0000000c0000000c0000000b0000000b00000000000000
+  valueChange: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  nameIngridient:
+  - Coffee Seeds
+  - Tea Leaves
+  - Milk
+  - Sugar
+  - Water
+  - Cocoa
+  - Espresso Shot
+  - Coffee Powder
+  - Ice Cubes
+  - Fancy Water
+  - Hot Water
+  - Chamomile Tea Leaves
+  - Jasmine Tea Leaves
+  - Earl Grey Tea Leaves
+  - Choi Tea Leaves
+  - Mint Tea Leaves
+  - Black Tea Leaves
+  - Green Tea Leaves
+  - English Tea Leaves
+  - Matcha Powder
+  - Chocolatte Chips
+  - Chocolatte Powder
+  - Caramel
+  - Simple Syrup
+  - Vanilla Syrup
+  - Hazelnut Syrup
+  - Chocolatter Syrup
+  - Fruit Syrup
+  - Steamed Milk
+  - Milk Foam
+  - Cream
+  - Whipped Cream
+  - Oreo Cookies
+  - Dolce
+  - Juice Powder
+  codeDrink:
+  - G
+  - GG
+  - GGI
+  - GKKK
+  - G^
+  - GW^
+  - G]]^
+  - G]]^b
+  - GY]]^
+  - GW]]^
+  - GZ]]^
+  - 'G]^ '
+  - 'GV]` '
+  - GGGGGGG
+  - HHHHHHH
+  - GIIIJ
+  - JJJJJJJ
+  - VKKK
+  - VIIIJ
+  - GIY]]_`
+  - GIUX]]_`
+  - GITX]]_`
+  - GHIX]]`
+  - GIW[]]`
+  - GIV[]]`
+  - GIH[]]`
+  - GI]]`bb
+  - GIUU[]]`
+  - CIJJJ\
+  - CIJJJ\\
+  - MIJJJ
+  - IJJJM\
+  - T]]]^
+  - Q]]]^
+  - KKKN
+  - KKKS
+  - KKKO
+  - KKKR
+  - KKKL
+  - KKKP
+  nameDrink:
+  - Espresso
+  - Double Shot
+  - Ice Shaken Double Shot
+  - Americano
+  - Espresso Macchiato
+  - Caramel Macchiato
+  - Caffe Latte
+  - Asian Dolce Latte
+  - Vanilla Latte
+  - Caramel Latte
+  - Hazelnut Latte
+  - Cappucino
+  - Caffe Mocha
+  - Starbucks Medium roast
+  - Starbucks Dark roast
+  - Cold brew
+  - Vanilla sweet cream cold brew
+  - Hot Chocolate
+  - Cold Chocolate
+  - Vanilla Cream
+  - Chocolate Chip Cream
+  - Green Tea Cream
+  - Coffee
+  - Caramel Java Chip
+  - Mocha
+  - Dark Mocha
+  - Asian Dolce
+  - Java Chip
+  - Raspberry Blackcurrant
+  - Mango Passion Fruit
+  - Iced Shaken Tea
+  - Iced Shaken Lemon Tea
+  - Green Tea Latte
+  - Black Tea Latte
+  - Black Tea (Earl Grey)
+  - Black Tea(English Breakfast)
+  - Black Tea (Choi)
+  - Green Tea(Mint Citrus)
+  - 'Caffeine Free Herbal tea (Chamomile) '
+  - 'Caffeine Free Herbal tea (Mint Blend) '
+  isExperimenting: 0

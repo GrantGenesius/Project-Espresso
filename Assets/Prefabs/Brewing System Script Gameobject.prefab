@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9115993011735457120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9115993011735457127}
+  - component: {fileID: 7143714870711624622}
+  m_Layer: 0
+  m_Name: Brewing System Script Gameobject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9115993011735457127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115993011735457120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 234.94412, y: 514.19147, z: -357.8726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7143714870711624622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115993011735457120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb276eae3d42994b83b52e656734fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot: []
+  inputSlot: []
+  allItemImage: []
+  theSlot: 
+  numberOfSlot: 0
+  coffeeSlot: 
+  teaSlot: 
+  milkSlot: 
+  sugarSlot: 
+  etcSlot: 
+  cocoaSlot: 
+  waterSlot: 
+  inputIngridientSlot: 
+  comparingSlot: 
+  allCoffeeSlot: []
+  allCoffeeName: []
+  categoryNumber: 0
