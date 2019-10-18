@@ -162,7 +162,6 @@ public class DB_General : MonoBehaviour
             }
         }
 
-
         //measure time difference
         if (dayHasPassed == false)
         {
@@ -172,10 +171,13 @@ public class DB_General : MonoBehaviour
                 hourPassed = (23 - hour) + getHour;
                 minutePassed = (59 - minute) + getMinute;
                 secondPassed = (59 - second) + getSecond;
+
                 minutePassed += (secondPassed / 60);
-                secondPassed -= 60;
+                if(secondPassed > 59)
+                    secondPassed -= 60;
                 hourPassed += (minutePassed / 60);
-                minutePassed -= 60;
+                if(minutePassed > 59)
+                    minutePassed -= 60;
                 if (hourPassed > 23) {
                     _24HrsPassed = true;
                     dayHasPassed = true;

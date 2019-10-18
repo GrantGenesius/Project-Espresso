@@ -17,9 +17,12 @@ public class MoisturizesPlant : MonoBehaviour
     //jumlah kualitas air yang diberikan
     public int valueWatering;
     // Start is called before the first frame update
+
+    public PlantTimer pt;
     void Start()
     {
         initialPosition = transform.position;
+        pt = FindObjectOfType<PlantTimer>();
     }
 
     // Update is called once per frame
@@ -52,15 +55,29 @@ public class MoisturizesPlant : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!onTarget)
-        {
-            gameObject.transform.position = initialPosition;
-        }
-        else
-        {
-            colTemp.gameObject.GetComponent<PlantSystem>().amountWatering += valueWatering ;
-            gameObject.transform.position = initialPosition;
-        }
+        
+        
+
+
+            if (!onTarget)
+            {
+                gameObject.transform.position = initialPosition;
+            }
+            else
+            {
+                if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus)
+                {
+                    colTemp.gameObject.GetComponent<PlantSystem>().amountWatering += valueWatering;
+                    colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
+                   // pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
+                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 4 ;
+                    pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
+                }
+                gameObject.transform.position = initialPosition;
+            }
+
+        
+        
 
     }
 
@@ -72,6 +89,12 @@ public class MoisturizesPlant : MonoBehaviour
             colTemp = collision;
             colTemp.GetComponent<PlantSystem>().currentTanahPlantSystem.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         }
+
+        if (collision.tag == "Tanah")
+        {
+            colTanahTemp = collision;
+        }
+
 
       
         
@@ -88,6 +111,11 @@ public class MoisturizesPlant : MonoBehaviour
             onTarget = false;
             colTemp = null;
             
+        }
+
+        if (collision.tag == "Tanah")
+        {
+            colTanahTemp = null;
         }
 
       

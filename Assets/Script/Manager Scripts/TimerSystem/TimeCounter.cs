@@ -53,7 +53,6 @@ public class TimeCounter : MonoBehaviour
             }
             else
             {
-
                 timerDisplay.text = ((int)minutes) + ":" + ((int)seconds);
             }
             startTime -= Time.deltaTime;
