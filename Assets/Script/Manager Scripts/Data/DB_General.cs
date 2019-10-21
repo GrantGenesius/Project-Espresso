@@ -220,14 +220,14 @@ public class DB_General : MonoBehaviour
     #region savedata functions
     //done
     [ContextMenu("General_Save")]
-    public void _OnSaveData_Ingredients()
+    public void _OnSaveData_General()
     {
         SaveSystem.SaveData_General(this);
     }
 
     //done, not tested
     [ContextMenu("General_Load")]
-    public void _OnLoadData_Ingredients()
+    public void _OnLoadData_General()
     {
         SavedData_General savedData_General = SaveSystem.LoadData_General();
         hour = savedData_General.hour;
@@ -239,4 +239,24 @@ public class DB_General : MonoBehaviour
     }
     #endregion
 
+
+    public static DB_General instance;
+
+    //singleton code here
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start() {
+        _OnLoadData_General();
+    }
 }

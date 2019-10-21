@@ -7,6 +7,7 @@ public class PlantTimer : MonoBehaviour
     
     public bool[] timerHasStarted;
     public GameObject[] allGround;
+    public DB_General dbg;
 
     public bool timerIsOn = true;
 
@@ -22,7 +23,7 @@ public class PlantTimer : MonoBehaviour
 
     void Start()
     {
-        
+        dbg = FindObjectOfType<DB_General>();
     }
 
     void FixedUpdate()
@@ -70,6 +71,17 @@ public class PlantTimer : MonoBehaviour
 
         seconds[idx] = moisturizesCooldown[idx] % 60;
         
+    }
+
+    [ContextMenu("Reduce_MoistCD")]
+    public void ReduceMoistCooldown()
+    {
+        int counter = 0;
+        foreach (float x in moisturizesCooldown) {
+            moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
+            counter++;
+        }
+
     }
 
 

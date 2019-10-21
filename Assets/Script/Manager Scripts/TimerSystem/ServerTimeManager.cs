@@ -229,8 +229,6 @@ public class ServerTimeManager : MonoBehaviour
         dbg.getYear = year;
     }
 
-
-    //get the current time at startup
     void Start()
     {
         dbg = FindObjectOfType<DB_General>();
