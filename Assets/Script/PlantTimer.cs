@@ -23,7 +23,10 @@ public class PlantTimer : MonoBehaviour
 
     void Start()
     {
+
+        
         dbg = FindObjectOfType<DB_General>();
+        ReduceMoistCooldown();
     }
 
     void FixedUpdate()

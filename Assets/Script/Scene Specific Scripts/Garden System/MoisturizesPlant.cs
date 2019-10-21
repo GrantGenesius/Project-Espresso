@@ -16,19 +16,12 @@ public class MoisturizesPlant : MonoBehaviour
     public Vector2 initialPosition;
     //jumlah kualitas air yang diberikan
     public int valueWatering;
-    // Start is called before the first frame update
 
     public PlantTimer pt;
     void Start()
     {
         initialPosition = transform.position;
         pt = FindObjectOfType<PlantTimer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnMouseDown()
@@ -49,16 +42,10 @@ public class MoisturizesPlant : MonoBehaviour
 
         }
         
-
-        
     }
 
     private void OnMouseUp()
     {
-        
-        
-
-
             if (!onTarget)
             {
                 gameObject.transform.position = initialPosition;
@@ -76,9 +63,6 @@ public class MoisturizesPlant : MonoBehaviour
                 gameObject.transform.position = initialPosition;
             }
 
-        
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,13 +79,7 @@ public class MoisturizesPlant : MonoBehaviour
             colTanahTemp = collision;
             colTanahTemp.gameObject.GetComponent<GroundController>().hovering = true;
         }
-
-
-      
-        
     }
-
-    
 
     private void OnTriggerExit2D(Collider2D collision)
     {

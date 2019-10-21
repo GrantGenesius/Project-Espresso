@@ -11,14 +11,12 @@ public class GroundController : MonoBehaviour
     public PlantTimer pt;
     
 
-    // Start is called before the first frame update
     void Start()
     {
         tanahColor = gameObject.GetComponent<SpriteRenderer>().color;
         pt = FindObjectOfType<PlantTimer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (pt.timerHasStarted[idxGround] == false)

@@ -16,7 +16,7 @@ public class PlantSystem : MonoBehaviour
     int idx;
 
     public PlantTimer pt;
-    // Start is called before the first frame update
+
     void Start()
     {
         normalColor = gameObject.GetComponent<SpriteRenderer>().color;
@@ -24,16 +24,11 @@ public class PlantSystem : MonoBehaviour
         idx = currentTanahPlantSystem.GetComponent<GroundController>().idxGround;
     }
 
-    // Update is called once per frame
     void Update()
     {
         TimeDisplay(idx);
         ActivateDisplay();
         WateringStatus();
-    
-
-        
-
     }
 
     public void WateringStatus()
