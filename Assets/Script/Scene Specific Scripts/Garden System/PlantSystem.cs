@@ -12,7 +12,10 @@ public class PlantSystem : MonoBehaviour
     public Color normalColor;
     public Color wateredColor;
 
+    public BoxCollider2D collider3rdForm;
+
     public TextMeshPro coolDownDisplay;
+    public GameObject iNeedWaterSign;
     int idx;
 
     public PlantTimer pt;
@@ -22,6 +25,7 @@ public class PlantSystem : MonoBehaviour
         normalColor = gameObject.GetComponent<SpriteRenderer>().color;
         pt = FindObjectOfType<PlantTimer>();
         idx = currentTanahPlantSystem.GetComponent<GroundController>().idxGround;
+       
     }
 
     void Update()
@@ -29,6 +33,12 @@ public class PlantSystem : MonoBehaviour
         TimeDisplay(idx);
         ActivateDisplay();
         WateringStatus();
+    }
+
+    public void OnMouseDown()
+    {
+        HarvestTree();
+        Debug.Log("Terbakar");
     }
 
     public void WateringStatus()
@@ -48,6 +58,8 @@ public class PlantSystem : MonoBehaviour
         if (amountWatering >= levelOfWatering[2] && !pt.timerHasStarted[idx])
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[2];
+            collider3rdForm.enabled = true;
+            iNeedWaterSign.SetActive(false);
         }
     }
     public void ActivateDisplay()
@@ -55,11 +67,15 @@ public class PlantSystem : MonoBehaviour
         if (pt.hour[idx] <= 0 && pt.minutes[idx] <= 0 && pt.seconds[idx] <= 0)
         {
             coolDownDisplay.gameObject.SetActive(false);
+            iNeedWaterSign.SetActive(true);
         }
         else
         {
             coolDownDisplay.gameObject.SetActive(true);
+            iNeedWaterSign.SetActive(false);
         }
+
+        
     }
     public void TimeDisplay(int i)
     {
@@ -94,5 +110,15 @@ public class PlantSystem : MonoBehaviour
             coolDownDisplay.text += (int)pt.seconds[i];
         }
 
+    }
+
+    public void HarvestTree()
+    {
+        if(amountWatering >= levelOfWatering[2])
+        {
+            //masukin instantiate disini
+            Destroy(gameObject);
+        }
+        
     }
 }
