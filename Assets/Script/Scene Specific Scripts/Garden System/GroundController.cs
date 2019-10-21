@@ -5,6 +5,7 @@ using UnityEngine;
 public class GroundController : MonoBehaviour
 {
     public bool moistStatus;
+    public bool hovering;
     public int idxGround;
     public Color tanahColor;
     public PlantTimer pt;
@@ -32,6 +33,15 @@ public class GroundController : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().color = tanahColor;
 
+        }
+
+        if (hovering)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        if(!hovering && !moistStatus)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = tanahColor;
         }
     }
 }

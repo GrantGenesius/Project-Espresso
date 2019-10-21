@@ -2938,6 +2938,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 615022026597825325, guid: 239a0cf8152584a40bc68bc186509210,
+        type: 3}
+      propertyPath: tanahColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 615022026597825325, guid: 239a0cf8152584a40bc68bc186509210,
+        type: 3}
+      propertyPath: tanahColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 615022026597825325, guid: 239a0cf8152584a40bc68bc186509210,
+        type: 3}
+      propertyPath: tanahColor.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239a0cf8152584a40bc68bc186509210, type: 3}
 --- !u!1 &1390722563
@@ -3271,12 +3286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be04c5bf401c14cb92e0e70019a33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moisturizesCooldown:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   timerHasStarted: 0000000000
   allGround:
   - {fileID: 1942464589}
@@ -3285,9 +3294,30 @@ MonoBehaviour:
   - {fileID: 1242517363}
   - {fileID: 1505385108}
   timerIsOn: 1
-  startTime: 0
-  minutes: 0
-  seconds: 0
+  moisturizesCooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  minutes:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  seconds:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  hour:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   timerStart: 0
   timerFinished: 0
 --- !u!4 &1539103910
@@ -3633,15 +3663,15 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -7090179003080661038, guid: 239a0cf8152584a40bc68bc186509210,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 615022026597825325, guid: 239a0cf8152584a40bc68bc186509210,
         type: 3}
       propertyPath: idxGround
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7090179003080661038, guid: 239a0cf8152584a40bc68bc186509210,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239a0cf8152584a40bc68bc186509210, type: 3}

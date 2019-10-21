@@ -70,7 +70,7 @@ public class MoisturizesPlant : MonoBehaviour
                     colTemp.gameObject.GetComponent<PlantSystem>().amountWatering += valueWatering;
                     colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
                    // pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
-                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 4 ;
+                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 86400 ;
                     pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
                 }
                 gameObject.transform.position = initialPosition;
@@ -87,12 +87,13 @@ public class MoisturizesPlant : MonoBehaviour
         {
             onTarget = true;
             colTemp = collision;
-            colTemp.GetComponent<PlantSystem>().currentTanahPlantSystem.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+           // colTemp.GetComponent<PlantSystem>().currentTanahPlantSystem.GetComponent<SpriteRenderer>().color = Color.blue;
         }
 
         if (collision.tag == "Tanah")
         {
             colTanahTemp = collision;
+            colTanahTemp.gameObject.GetComponent<GroundController>().hovering = true;
         }
 
 
@@ -106,8 +107,8 @@ public class MoisturizesPlant : MonoBehaviour
     {
         if (collision.tag == "Tanaman")
         {
-            colTemp.GetComponent<PlantSystem>().currentTanahPlantSystem.GetComponent<SpriteRenderer>().color =
-                colTemp.GetComponent<PlantSystem>().normalColor;
+            //colTemp.GetComponent<PlantSystem>().currentTanahPlantSystem.GetComponent<SpriteRenderer>().color =
+            //    colTemp.GetComponent<PlantSystem>().normalColor;
             onTarget = false;
             colTemp = null;
             
@@ -115,6 +116,7 @@ public class MoisturizesPlant : MonoBehaviour
 
         if (collision.tag == "Tanah")
         {
+            colTanahTemp.gameObject.GetComponent<GroundController>().hovering = false;
             colTanahTemp = null;
         }
 

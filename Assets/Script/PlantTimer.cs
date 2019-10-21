@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlantTimer : MonoBehaviour
 {
-    public float[] moisturizesCooldown;
+    
     public bool[] timerHasStarted;
     public GameObject[] allGround;
 
     public bool timerIsOn = true;
 
 
-    public float startTime;
-    public float minutes;
-    public float seconds;
+    public float[] moisturizesCooldown;
+    public float[] minutes;
+    public float[] seconds;
+    public float[] hour;
+
     public bool timerStart;
     public bool timerFinished;
 
@@ -25,6 +27,13 @@ public class PlantTimer : MonoBehaviour
 
     void FixedUpdate()
     {
+        for(int i = 0; i<moisturizesCooldown.Length; i++)
+        {
+            if (moisturizesCooldown[i] >= 0)
+            {
+                TimeDisplay(i);
+            }
+        }
         for (int i = 0; i < timerHasStarted.Length; i++)
         {
             if (timerHasStarted[i] == true)
@@ -40,18 +49,27 @@ public class PlantTimer : MonoBehaviour
         }
     }
 
-    public void StartTimer()
-    {
-        startTime = 15 * 60;
-        timerFinished = false;
-        timerStart = true;
-    }
+    //public void StartTimer()
+    //{
+    //    startTime = 15 * 60;
+    //    timerFinished = false;
+    //    timerStart = true;
+    //}
 
 
     public void StopTimer(int index)
     {
         timerHasStarted[index] = false;
         moisturizesCooldown[index] = 0;
+    }
+
+    public void TimeDisplay(int idx)
+    {
+        hour[idx] = moisturizesCooldown[idx] / 3600;
+        minutes[idx] = (moisturizesCooldown[idx] % 3600)/60;
+
+        seconds[idx] = moisturizesCooldown[idx] % 60;
+        
     }
 
 
