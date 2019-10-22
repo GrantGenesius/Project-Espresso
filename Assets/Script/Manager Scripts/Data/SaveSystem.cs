@@ -6,8 +6,40 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
 
+    //save and load garden data here (plantType, growthStage, moisturizeCD)
+    public static void SaveData_Garden(DB_Garden dbga)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/General_Garden.esp";
+        FileStream stream = new FileStream(path, FileMode.Create);
 
-    //save and load general data here (timer, time passed, garden, etc)
+        SavedData_Garden savedData_Garden = new SavedData_Garden(dbga);
+        formatter.Serialize(stream, savedData_Garden);
+        stream.Close();
+    }
+
+    public static SavedData_Garden LoadData_Garden()
+    {
+        string path = Application.persistentDataPath + "/General_Garden.esp";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            SavedData_Garden savedData_Garden = formatter.Deserialize(stream) as SavedData_Garden;
+            stream.Close();
+
+            return savedData_Garden;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in " + path);
+            return null;
+        }
+    }
+
+
+    //save and load general data here (timer, time passed, date, etc)
     public static void SaveData_General(DB_General dbg) { 
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/General_Time.esp";

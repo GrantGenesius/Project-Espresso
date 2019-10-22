@@ -56,7 +56,7 @@ public class MoisturizesPlant : MonoBehaviour
                 {
                     colTemp.gameObject.GetComponent<PlantSystem>().amountWatering += valueWatering;
                     colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
-                   // pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
+                    //pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
                     pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 10 ;
                     pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
                 }
