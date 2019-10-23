@@ -20,7 +20,21 @@ public class PlantTimer : MonoBehaviour
     public bool timerStart;
     public bool timerFinished;
 
+    public static PlantTimer instance;
 
+    //singleton code here
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
 
