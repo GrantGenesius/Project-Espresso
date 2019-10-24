@@ -18,6 +18,17 @@ public class Garden_Connector : MonoBehaviour
         
     }
 
+    public void Awake()
+    {
+        pt = FindObjectOfType<PlantTimer>();
+        pt.allGround = groundHolder;
+    }
+
+    public void OnDestroy()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
