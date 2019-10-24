@@ -6481,6 +6481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 
+  plantTypeHolder: 00000000000000000000
   moisturizeCD_01: 0
   moisturizeCD_02: 0
   moisturizeCD_03: 0

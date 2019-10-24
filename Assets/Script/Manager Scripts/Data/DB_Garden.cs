@@ -7,6 +7,7 @@ public class DB_Garden : MonoBehaviour
     //string that defines planted seeds ex. (0.0.1.2.1) 
     //0 means no plants, 1 means coffee seed planted, 2 means tea seed planted
     public string plantType;
+   
 
     //timer left in form of seconds (max. 86400, min. 0)
     public float moisturizeCD_01;
@@ -72,4 +73,6 @@ public class DB_Garden : MonoBehaviour
     {
         _OnLoadData_Garden();
     }
+
+  
 }

@@ -142,13 +142,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initiateSize: {x: 0, y: 0, z: 0}
+  currentTanahDrag: {fileID: 0}
   startSize: {x: 1, y: 1, z: 1}
   clickedSize: {x: 1, y: 1, z: 1}
   targetObject: {fileID: 3144695548384862688, guid: 239a0cf8152584a40bc68bc186509210,
     type: 3}
   onTarget: 0
   locked: 0
-  ingridientId: 0
+  ingridientId: 5
   plantResult: {fileID: 3772009834430614576, guid: 2c3c6439688952c49984d179769cbe7a,
     type: 3}
+  landingPosition: {fileID: 0}
+  quantity: {fileID: 0}
   bil: {fileID: 0}

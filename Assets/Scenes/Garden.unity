@@ -507,6 +507,13 @@ MonoBehaviour:
   - {fileID: 2117085930}
   - {fileID: 1242517363}
   - {fileID: 1505385108}
+  plantHolder:
+  - {fileID: 3924473808366571823, guid: dc6e268953f0ffc41972eb6443728564, type: 3}
+  - {fileID: 5014225810728490975, guid: c1619a11997b0ed43b032292990daa0a, type: 3}
+  - {fileID: 1268618770335326119, guid: b04de7c92c7067b40b1431a06c4c0c25, type: 3}
+  - {fileID: 5002277505082725373, guid: e3c81752f094a724389add39ebf6bd91, type: 3}
+  - {fileID: 3772009834430614576, guid: 2c3c6439688952c49984d179769cbe7a, type: 3}
+  - {fileID: 139643837608290098, guid: bb1738ba753425e438b901bda49e1909, type: 3}
   moistCoolDownHolder: 
   growthPlantLevelHolder: 
 --- !u!4 &688180225
@@ -2222,6 +2229,7 @@ MonoBehaviour:
   - {fileID: 1242517363}
   - {fileID: 1505385108}
   dbg: {fileID: 0}
+  dbga: {fileID: 0}
   timerIsOn: 1
   moisturizesCooldown:
   - 0
@@ -2249,6 +2257,7 @@ MonoBehaviour:
   - 0
   timerStart: 0
   timerFinished: 0
+  plantIDHolder: 00000000000000000000
 --- !u!4 &1539103910
 Transform:
   m_ObjectHideFlags: 0
@@ -3148,6 +3157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
   initiateSize: {x: 0.11, y: 0.11, z: 0.11}
   currentTanahDrag: {fileID: 0}
   startSize: {x: 0.11, y: 0.11, z: 1}
@@ -3364,6 +3374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
   initiateSize: {x: 0.11, y: 0.11, z: 0.11}
   currentTanahDrag: {fileID: 0}
   startSize: {x: 0.11, y: 0.11, z: 1}
@@ -3539,6 +3550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
   initiateSize: {x: 1, y: 1, z: 1}
   currentTanahDrag: {fileID: 0}
   startSize: {x: 1, y: 1, z: 1}
@@ -3660,6 +3672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
   initiateSize: {x: 0.11, y: 0.11, z: 0.11}
   currentTanahDrag: {fileID: 0}
   startSize: {x: 0.11, y: 0.11, z: 1}
@@ -4101,6 +4114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
   initiateSize: {x: 0.11, y: 0.11, z: 0.11}
   currentTanahDrag: {fileID: 0}
   startSize: {x: 0.11, y: 0.11, z: 1}
@@ -4304,6 +4318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002725371101c00489576755d7b77515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
   initiateSize: {x: 0.11, y: 0.11, z: 0.11}
   currentTanahDrag: {fileID: 0}
   startSize: {x: 0.11, y: 0.11, z: 0.14}

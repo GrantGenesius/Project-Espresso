@@ -10,12 +10,13 @@ public class Garden_Connector : MonoBehaviour
     public GroundController gc;
     public DB_Garden dbGarden;
     public GameObject[] groundHolder;
+    public GameObject[] plantHolder;
     public int[] moistCoolDownHolder;
     public int[] growthPlantLevelHolder;
     void Start()
     {
-        
-        
+
+        loadPlant();
     }
 
     public void Awake()
@@ -33,5 +34,20 @@ public class Garden_Connector : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void loadPlant()
+    {
+        for(int i = 0; i<groundHolder.Length; i++)
+        {
+            if (pt.plantIDHolder[i] != '\0') {
+
+                GameObject g = Instantiate(plantHolder[(int)pt.plantIDHolder[i]-48], groundHolder[i].transform.position, Quaternion.identity);
+
+                g.GetComponent<PlantSystem>().idx = i;
+              
+            }
+            
+        }
     }
 }

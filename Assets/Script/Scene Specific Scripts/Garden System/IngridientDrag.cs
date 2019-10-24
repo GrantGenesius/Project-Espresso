@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class IngridientDrag : MonoBehaviour
 {
+
+    public DB_Garden dbga;
+
     public Vector3 initiateSize;
     private float deltaX, deltaY;
     private Vector2 mousePosition;
@@ -38,6 +41,7 @@ public class IngridientDrag : MonoBehaviour
     {
         bil = FindObjectOfType<BrewIngridientList>();
         initiateSize = GetComponent<SpriteRenderer>().transform.localScale;
+        dbga = FindObjectOfType<DB_Garden>();
         locked = false;
         onTarget = false;
        
@@ -93,6 +97,9 @@ public class IngridientDrag : MonoBehaviour
             
             GameObject g = Instantiate(plantResult,landingPosition.transform.position, Quaternion.identity) ;
             g.GetComponent<PlantSystem>().currentTanahPlantSystem = currentTanahDrag;
+            g.GetComponent<PlantSystem>().typeOfPlant = ingridientId;
+            
+            //print("kepanggil");
             
             if (bil.valueIngridient[ingridientId] > 0)
             {

@@ -8,6 +8,7 @@ public class PlantTimer : MonoBehaviour
     public bool[] timerHasStarted;
     public GameObject[] allGround;
     public DB_General dbg;
+    public DB_Garden dbga;
 
     public bool timerIsOn = true;
 
@@ -19,6 +20,8 @@ public class PlantTimer : MonoBehaviour
 
     public bool timerStart;
     public bool timerFinished;
+
+    public char[] plantIDHolder;
 
     public static PlantTimer instance;
 
@@ -40,12 +43,14 @@ public class PlantTimer : MonoBehaviour
 
         
         dbg = FindObjectOfType<DB_General>();
+        dbga = FindObjectOfType<DB_Garden>();
         ReduceMoistCooldown();
     }
 
     void FixedUpdate()
     {
-        for(int i = 0; i<moisturizesCooldown.Length; i++)
+        
+        for (int i = 0; i<moisturizesCooldown.Length; i++)
         {
             if (moisturizesCooldown[i] >= 0)
             {
