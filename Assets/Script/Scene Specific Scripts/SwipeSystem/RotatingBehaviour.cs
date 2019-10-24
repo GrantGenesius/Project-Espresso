@@ -27,24 +27,28 @@ public class RotatingBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (swipeControls.SwipeLeft)
+        if (spinCDAvailable)
         {
-            desiredPosition += Vector3.left;
-            Debug.Log("left");
-            os.OnSpin();
-            spinPower = spinPowerMultiplier;
-            currDirection = 1;
-        }
-        if (swipeControls.SwipeRight)
-        {
-            desiredPosition += Vector3.right;
-            Debug.Log("Right");
-            os.OnSpin();
-            spinPower = -spinPowerMultiplier;
-            currDirection = -1;
-        }
-        if(swipeControls.Tap){
-            Debug.Log("Tap");
+            if (swipeControls.SwipeLeft)
+            {
+                desiredPosition += Vector3.left;
+                Debug.Log("left");
+                os.OnSpin();
+                spinPower = spinPowerMultiplier;
+                currDirection = 1;
+            }
+            if (swipeControls.SwipeRight)
+            {
+                desiredPosition += Vector3.right;
+                Debug.Log("Right");
+                os.OnSpin();
+                spinPower = -spinPowerMultiplier;
+                currDirection = -1;
+            }
+            if (swipeControls.Tap)
+            {
+                Debug.Log("Tap");
+            }
         }
 
         //change with rotation
@@ -85,7 +89,7 @@ public class RotatingBehaviour : MonoBehaviour
     }
 
     void OnMouseUp() {
-        transform.Rotate(0,1 * spinPower,0);
+        transform.Rotate(0, 1 * spinPower, 0);
         spinPower -= 1;
     }
 }
