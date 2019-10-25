@@ -18,10 +18,13 @@ public class MoisturizesPlant : MonoBehaviour
     public int valueWatering;
 
     public PlantTimer pt;
+    public Garden_Connector gc;
+
     void Start()
     {
         initialPosition = transform.position;
         pt = FindObjectOfType<PlantTimer>();
+        gc = FindObjectOfType<Garden_Connector>();
     }
 
     private void OnMouseDown()
@@ -54,10 +57,10 @@ public class MoisturizesPlant : MonoBehaviour
             {
                 if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus)
                 {
-                    colTemp.gameObject.GetComponent<PlantSystem>().amountWatering += valueWatering;
+                    pt.waterLevel[colTemp.gameObject.GetComponent<PlantSystem>().idx] += valueWatering;
                     colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
                     //pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
-                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 86400 ;
+                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 10 ;
                     pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
                 }
                 gameObject.transform.position = initialPosition;

@@ -23,6 +23,10 @@ public class GroundController : MonoBehaviour
         {
             moistStatus = false;
         }
+        else
+        {
+            moistStatus = true;
+        }
         if (moistStatus)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.black;

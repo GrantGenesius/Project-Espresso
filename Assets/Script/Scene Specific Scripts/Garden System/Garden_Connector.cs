@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class Garden_Connector : MonoBehaviour
 
     public PlantTimer pt;
     public GroundController gc;
+    public NavigationSystem ns;
     public DB_Garden dbGarden;
     public GameObject[] groundHolder;
     public GameObject[] plantHolder;
@@ -15,26 +16,20 @@ public class Garden_Connector : MonoBehaviour
     public int[] growthPlantLevelHolder;
     void Start()
     {
-
+        
         loadPlant();
     }
 
     public void Awake()
     {
+        ns = FindObjectOfType<NavigationSystem>();
         pt = FindObjectOfType<PlantTimer>();
         pt.allGround = groundHolder;
+        dbGarden = FindObjectOfType<DB_Garden>();
+        ns.LoadGarden();
+        //pt.waterLevel = growthPlantLevelHolder;
     }
-
-    public void OnDestroy()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void loadPlant()
     {
@@ -42,10 +37,12 @@ public class Garden_Connector : MonoBehaviour
         {
             if (pt.plantIDHolder[i] != '\0') {
 
-                GameObject g = Instantiate(plantHolder[(int)pt.plantIDHolder[i]-48], groundHolder[i].transform.position, Quaternion.identity);
+                GameObject g = Instantiate(plantHolder[pt.plantIDHolder[i]], groundHolder[i].transform.position, Quaternion.identity);
+                
 
                 g.GetComponent<PlantSystem>().idx = i;
-              
+                g.GetComponent<PlantSystem>().currentTanahPlantSystem = groundHolder[i].gameObject.GetComponent<Collider2D>();
+
             }
             
         }

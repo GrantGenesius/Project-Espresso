@@ -500,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pt: {fileID: 0}
   gc: {fileID: 0}
+  ns: {fileID: 0}
   dbGarden: {fileID: 0}
   groundHolder:
   - {fileID: 1942464589}
@@ -515,7 +516,7 @@ MonoBehaviour:
   - {fileID: 3772009834430614576, guid: 2c3c6439688952c49984d179769cbe7a, type: 3}
   - {fileID: 139643837608290098, guid: bb1738ba753425e438b901bda49e1909, type: 3}
   moistCoolDownHolder: 
-  growthPlantLevelHolder: 
+  growthPlantLevelHolder: ffffffffffffffffffffffffffffffffffffffff
 --- !u!4 &688180225
 Transform:
   m_ObjectHideFlags: 0
@@ -2090,6 +2091,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   valueWatering: 5
   pt: {fileID: 0}
+  gc: {fileID: 0}
 --- !u!61 &1453887336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2231,6 +2233,7 @@ MonoBehaviour:
   dbg: {fileID: 0}
   dbga: {fileID: 0}
   timerIsOn: 1
+  waterLevel: 0000000000000000000000000000000000000000
   moisturizesCooldown:
   - 0
   - 0
@@ -2257,7 +2260,8 @@ MonoBehaviour:
   - 0
   timerStart: 0
   timerFinished: 0
-  plantIDHolder: 00000000000000000000
+  plantIDHolder: ffffffffffffffffffffffffffffffffffffffff
+  savedString: 
 --- !u!4 &1539103910
 Transform:
   m_ObjectHideFlags: 0
@@ -3886,6 +3890,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   valueWatering: 15
   pt: {fileID: 0}
+  gc: {fileID: 0}
 --- !u!224 &2092884314678079405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4063,6 +4068,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   valueWatering: 10
   pt: {fileID: 0}
+  gc: {fileID: 0}
 --- !u!224 &2092884315626364811
 RectTransform:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class SceneMover : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNumber);
     }
+    
 
     public void LoadNextScene()
     {

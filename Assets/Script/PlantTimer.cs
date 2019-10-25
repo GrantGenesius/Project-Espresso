@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlantTimer : MonoBehaviour
 {
-    
+
     public bool[] timerHasStarted;
     public GameObject[] allGround;
     public DB_General dbg;
@@ -12,7 +12,7 @@ public class PlantTimer : MonoBehaviour
 
     public bool timerIsOn = true;
 
-
+    public int[] waterLevel;
     public float[] moisturizesCooldown;
     public float[] minutes;
     public float[] seconds;
@@ -21,7 +21,8 @@ public class PlantTimer : MonoBehaviour
     public bool timerStart;
     public bool timerFinished;
 
-    public char[] plantIDHolder;
+    public int[] plantIDHolder;
+    public string savedString = "";
 
     public static PlantTimer instance;
 
@@ -41,7 +42,7 @@ public class PlantTimer : MonoBehaviour
     void Start()
     {
 
-        
+
         dbg = FindObjectOfType<DB_General>();
         dbga = FindObjectOfType<DB_Garden>();
         ReduceMoistCooldown();
@@ -49,8 +50,8 @@ public class PlantTimer : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-        for (int i = 0; i<moisturizesCooldown.Length; i++)
+
+        for (int i = 0; i < moisturizesCooldown.Length; i++)
         {
             if (moisturizesCooldown[i] >= 0)
             {
@@ -89,10 +90,10 @@ public class PlantTimer : MonoBehaviour
     public void TimeDisplay(int idx)
     {
         hour[idx] = moisturizesCooldown[idx] / 3600;
-        minutes[idx] = (moisturizesCooldown[idx] % 3600)/60;
+        minutes[idx] = (moisturizesCooldown[idx] % 3600) / 60;
 
         seconds[idx] = moisturizesCooldown[idx] % 60;
-        
+
     }
 
     [ContextMenu("Reduce_MoistCD")]
@@ -104,6 +105,28 @@ public class PlantTimer : MonoBehaviour
             counter++;
         }
 
+    }
+
+    public void MergePlantIDList()
+    {
+        for (int i = 0; i < plantIDHolder.Length; i++)
+        {
+            if (plantIDHolder[i] == '\0')
+                savedString += "7.";
+
+            else
+                savedString += plantIDHolder[i] + ".";
+        }
+    }
+
+    public void ConvertStringtoPlantID() {
+        string[] ConvertedString = savedString.Split('.');
+        
+        for(int i=0; i<ConvertedString.Length; i++)
+        {
+            Debug.Log(ConvertedString[i]);
+            int.TryParse(ConvertedString[i],out plantIDHolder[i]);
+        }
     }
 
 

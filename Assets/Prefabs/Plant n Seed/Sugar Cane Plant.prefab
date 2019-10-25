@@ -223,6 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2c7508c9065e1478681db1520db4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dbga: {fileID: 0}
+  gc: {fileID: 0}
   forms:
   - {fileID: 2377472381627504963, guid: 69f30aa784928cb4584e610548718f48, type: 3}
   - {fileID: -4601919715752310138, guid: 69f30aa784928cb4584e610548718f48, type: 3}
@@ -235,6 +237,8 @@ MonoBehaviour:
   collider3rdForm: {fileID: 2778940335117601287}
   coolDownDisplay: {fileID: 1753287626280221718}
   iNeedWaterSign: {fileID: 2877630794838579294}
+  typeOfPlant: 3
+  idx: 0
   pt: {fileID: 0}
 --- !u!61 &2778940335117601287
 BoxCollider2D:

@@ -6,6 +6,7 @@ using TMPro;
 public class PlantSystem : MonoBehaviour
 {
     public DB_Garden dbga;
+    public Garden_Connector gc;
 
     public Sprite[] forms;
     public int amountWatering;
@@ -28,18 +29,15 @@ public class PlantSystem : MonoBehaviour
         normalColor = gameObject.GetComponent<SpriteRenderer>().color;
         dbga = FindObjectOfType<DB_Garden>();
         pt = FindObjectOfType<PlantTimer>();
+        gc = FindObjectOfType<Garden_Connector>();
         idx = currentTanahPlantSystem.GetComponent<GroundController>().idxGround;
 
-       pt.plantIDHolder[idx] = (char)(48 + typeOfPlant);
-
-
-
+       pt.plantIDHolder[idx] = typeOfPlant;
     }
-  
+
     void Update()
     {
-
-        
+        amountWatering = pt.waterLevel[idx];
         TimeDisplay(idx);
         ActivateDisplay();
         WateringStatus();
@@ -129,6 +127,7 @@ public class PlantSystem : MonoBehaviour
             //masukin instantiate disini
             Destroy(gameObject);
             pt.plantIDHolder[idx] = '\0';
+            pt.waterLevel[idx] = 0;
         }
         
     }

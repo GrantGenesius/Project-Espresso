@@ -97,7 +97,7 @@ public class IngridientDrag : MonoBehaviour
             
             GameObject g = Instantiate(plantResult,landingPosition.transform.position, Quaternion.identity) ;
             g.GetComponent<PlantSystem>().currentTanahPlantSystem = currentTanahDrag;
-            g.GetComponent<PlantSystem>().typeOfPlant = ingridientId;
+            //g.GetComponent<PlantSystem>().typeOfPlant = ingridientId-1;
             
             //print("kepanggil");
             
