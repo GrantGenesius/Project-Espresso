@@ -126,7 +126,7 @@ public class PlantSystem : MonoBehaviour
         {
             //masukin instantiate disini
             Destroy(gameObject);
-            pt.plantIDHolder[idx] = '\0';
+            pt.plantIDHolder[idx] = -1;
             pt.waterLevel[idx] = 0;
         }
         

@@ -16,7 +16,7 @@ public class Garden_Connector : MonoBehaviour
     public int[] growthPlantLevelHolder;
     void Start()
     {
-        
+        pt.ConvertStringtoPlantID();
         loadPlant();
     }
 
@@ -35,13 +35,17 @@ public class Garden_Connector : MonoBehaviour
     {
         for(int i = 0; i<groundHolder.Length; i++)
         {
-            if (pt.plantIDHolder[i] != '\0') {
+            if (pt.plantIDHolder[i] != -1) {
 
                 GameObject g = Instantiate(plantHolder[pt.plantIDHolder[i]], groundHolder[i].transform.position, Quaternion.identity);
                 
 
                 g.GetComponent<PlantSystem>().idx = i;
                 g.GetComponent<PlantSystem>().currentTanahPlantSystem = groundHolder[i].gameObject.GetComponent<Collider2D>();
+                if(pt.moisturizesCooldown[i] > 0)
+                {
+                    pt.timerHasStarted[i] = true;
+                }
 
             }
             

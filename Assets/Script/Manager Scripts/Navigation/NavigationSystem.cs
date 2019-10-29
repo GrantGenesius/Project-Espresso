@@ -48,12 +48,19 @@ public class NavigationSystem : MonoBehaviour
     }
     public void _OnExperiment()
     {
-        bil.isExperimenting = true;
+        if(CheckScene() == "Brew")
+        {
+            bil.isExperimenting = true;
+        }
+        
     }
 
     public void _OnNotExperiment()
     {
-        bil.isExperimenting = false;
+        if (CheckScene() == "Brew")
+        {
+            bil.isExperimenting = false;
+        }
     }
 
     public void OnApplicationQuit()
@@ -68,7 +75,7 @@ public class NavigationSystem : MonoBehaviour
         Debug.Log("Load");
 
         dbga._OnLoadData_Garden();
-
+       
         pt.savedString = dbga.plantType;
         pt.ConvertStringtoPlantID();
 
@@ -91,7 +98,10 @@ public class NavigationSystem : MonoBehaviour
         PlantTimer pt = FindObjectOfType<PlantTimer>();
         DB_Garden dbga = FindObjectOfType<DB_Garden>();
 
+        pt.ResetPlantType();
+        pt.MergePlantIDList();
         dbga.plantType = pt.savedString;
+        
 
         dbga.moisturizeCD_01 = pt.moisturizesCooldown[0];
         dbga.moisturizeCD_02 = pt.moisturizesCooldown[1];

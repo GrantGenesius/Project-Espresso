@@ -111,12 +111,17 @@ public class PlantTimer : MonoBehaviour
     {
         for (int i = 0; i < plantIDHolder.Length; i++)
         {
-            if (plantIDHolder[i] == '\0')
-                savedString += "7.";
+            if (plantIDHolder[i] == -1)
+                savedString += "-1.";
 
             else
                 savedString += plantIDHolder[i] + ".";
         }
+    }
+
+    public void ResetPlantType()
+    {
+        savedString = "";
     }
 
     public void ConvertStringtoPlantID() {
@@ -124,8 +129,17 @@ public class PlantTimer : MonoBehaviour
         
         for(int i=0; i<ConvertedString.Length; i++)
         {
-            Debug.Log(ConvertedString[i]);
-            int.TryParse(ConvertedString[i],out plantIDHolder[i]);
+            if(i < plantIDHolder.Length)
+            {
+                Debug.Log(ConvertedString[i]);
+                int.TryParse(ConvertedString[i],out plantIDHolder[i]);
+                //plantIDHolder[i] = int.Parse(ConvertedString[i]);
+                Debug.Log(plantIDHolder[i]);
+
+
+            }
+            
+        
         }
     }
 
