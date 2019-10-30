@@ -257,7 +257,7 @@ public class DB_General : MonoBehaviour
     }
 
     void Start() {
-        //_OnLoadData_General();
+        _OnLoadData_General();
     }
 
     void OnApplicationQuit() {

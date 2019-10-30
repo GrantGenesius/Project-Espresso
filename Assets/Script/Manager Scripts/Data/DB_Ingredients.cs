@@ -148,7 +148,12 @@ public class DB_Ingredients : MonoBehaviour
 
     void Start()
     {
+        _OnLoadData_Ingredients();
         CreateBrewIngredientArray();
+    }
+
+    void OnApplicationQuit() {
+        _OnSaveData_Ingredients();
     }
 
     //called everytime the array value changes via other scenes
