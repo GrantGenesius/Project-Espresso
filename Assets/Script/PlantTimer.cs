@@ -39,10 +39,9 @@ public class PlantTimer : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
     void Start()
     {
-
-
         dbg = FindObjectOfType<DB_General>();
         dbga = FindObjectOfType<DB_Garden>();
         ReduceMoistCooldown();
@@ -50,7 +49,6 @@ public class PlantTimer : MonoBehaviour
 
     void FixedUpdate()
     {
-
         for (int i = 0; i < moisturizesCooldown.Length; i++)
         {
             if (moisturizesCooldown[i] >= 0)
@@ -72,14 +70,6 @@ public class PlantTimer : MonoBehaviour
             }
         }
     }
-
-    //public void StartTimer()
-    //{
-    //    startTime = 15 * 60;
-    //    timerFinished = false;
-    //    timerStart = true;
-    //}
-
 
     public void StopTimer(int index)
     {
@@ -113,7 +103,6 @@ public class PlantTimer : MonoBehaviour
         {
             if (plantIDHolder[i] == -1)
                 savedString += "-1.";
-
             else
                 savedString += plantIDHolder[i] + ".";
         }
@@ -131,15 +120,11 @@ public class PlantTimer : MonoBehaviour
         {
             if(i < plantIDHolder.Length)
             {
-                Debug.Log(ConvertedString[i]);
+                //Debug.Log(ConvertedString[i]);
                 int.TryParse(ConvertedString[i],out plantIDHolder[i]);
                 //plantIDHolder[i] = int.Parse(ConvertedString[i]);
-                Debug.Log(plantIDHolder[i]);
-
-
+                //Debug.Log(plantIDHolder[i]);
             }
-            
-        
         }
     }
 

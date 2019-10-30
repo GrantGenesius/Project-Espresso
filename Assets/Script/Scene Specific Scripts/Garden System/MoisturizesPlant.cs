@@ -49,22 +49,22 @@ public class MoisturizesPlant : MonoBehaviour
 
     private void OnMouseUp()
     {
-            if (!onTarget)
+        if (!onTarget)
+        {
+            gameObject.transform.position = initialPosition;
+        }
+        else
+        {
+            if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus)
             {
-                gameObject.transform.position = initialPosition;
+                pt.waterLevel[colTemp.gameObject.GetComponent<PlantSystem>().idx] += valueWatering;
+                colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
+                //pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
+                pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 86400 ;
+                pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
             }
-            else
-            {
-                if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus)
-                {
-                    pt.waterLevel[colTemp.gameObject.GetComponent<PlantSystem>().idx] += valueWatering;
-                    colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
-                    //pt.allGround[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = colTanahTemp.gameObject;
-                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = 86400 ;
-                    pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
-                }
-                gameObject.transform.position = initialPosition;
-            }
+            gameObject.transform.position = initialPosition;
+        }
 
     }
 

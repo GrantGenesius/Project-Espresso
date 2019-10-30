@@ -14,6 +14,7 @@ public class Garden_Connector : MonoBehaviour
     public GameObject[] plantHolder;
     public int[] moistCoolDownHolder;
     public int[] growthPlantLevelHolder;
+
     void Start()
     {
         pt.ConvertStringtoPlantID();
@@ -30,7 +31,6 @@ public class Garden_Connector : MonoBehaviour
         //pt.waterLevel = growthPlantLevelHolder;
     }
     
-
     public void loadPlant()
     {
         for(int i = 0; i<groundHolder.Length; i++)
@@ -38,7 +38,6 @@ public class Garden_Connector : MonoBehaviour
             if (pt.plantIDHolder[i] != -1) {
 
                 GameObject g = Instantiate(plantHolder[pt.plantIDHolder[i]], groundHolder[i].transform.position, Quaternion.identity);
-                
 
                 g.GetComponent<PlantSystem>().idx = i;
                 g.GetComponent<PlantSystem>().currentTanahPlantSystem = groundHolder[i].gameObject.GetComponent<Collider2D>();
@@ -46,9 +45,7 @@ public class Garden_Connector : MonoBehaviour
                 {
                     pt.timerHasStarted[i] = true;
                 }
-
             }
-            
         }
     }
 }

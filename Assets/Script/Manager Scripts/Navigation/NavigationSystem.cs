@@ -15,7 +15,6 @@ public class NavigationSystem : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
     public void _OnOpenClose()
     {
         if (navigationActive)
@@ -40,19 +39,19 @@ public class NavigationSystem : MonoBehaviour
     public string CheckScene()
     {
         Scene scene;
-        string sceneName="";
+        string sceneName = "";
         scene = SceneManager.GetActiveScene();
         sceneName = scene.name;
 
         return sceneName;
     }
+
     public void _OnExperiment()
     {
         if(CheckScene() == "Brew")
         {
             bil.isExperimenting = true;
         }
-        
     }
 
     public void _OnNotExperiment()
@@ -63,33 +62,36 @@ public class NavigationSystem : MonoBehaviour
         }
     }
 
-    public void OnApplicationQuit()
+    void OnApplicationQuit()
     {
         SaveGarden();
-        Debug.Log("Save Garden Bou");
     }
 
     public void LoadGarden() {
         PlantTimer pt = FindObjectOfType<PlantTimer>();
         DB_Garden dbga = FindObjectOfType<DB_Garden>();
-        Debug.Log("Load");
 
-        dbga._OnLoadData_Garden();
-       
-        pt.savedString = dbga.plantType;
-        pt.ConvertStringtoPlantID();
+        if (dbga.firstTimeLoad == false)
+        {
+            dbga._OnLoadData_Garden();
 
-        pt.waterLevel[0] = dbga.growthLevel_01;
-        pt.waterLevel[1] = dbga.growthLevel_02;
-        pt.waterLevel[2] = dbga.growthLevel_03;
-        pt.waterLevel[3] = dbga.growthLevel_04;
-        pt.waterLevel[4] = dbga.growthLevel_05;
+            pt.savedString = dbga.plantType;
+            pt.ConvertStringtoPlantID();
 
-         pt.moisturizesCooldown[0]= dbga.moisturizeCD_01;
-         pt.moisturizesCooldown[1]= dbga.moisturizeCD_02;
-         pt.moisturizesCooldown[2]= dbga.moisturizeCD_03;
-         pt.moisturizesCooldown[3]= dbga.moisturizeCD_04;
-         pt.moisturizesCooldown[4]= dbga.moisturizeCD_05;
+            pt.waterLevel[0] = dbga.growthLevel_01;
+            pt.waterLevel[1] = dbga.growthLevel_02;
+            pt.waterLevel[2] = dbga.growthLevel_03;
+            pt.waterLevel[3] = dbga.growthLevel_04;
+            pt.waterLevel[4] = dbga.growthLevel_05;
+
+            pt.moisturizesCooldown[0] = dbga.moisturizeCD_01;
+            pt.moisturizesCooldown[1] = dbga.moisturizeCD_02;
+            pt.moisturizesCooldown[2] = dbga.moisturizeCD_03;
+            pt.moisturizesCooldown[3] = dbga.moisturizeCD_04;
+            pt.moisturizesCooldown[4] = dbga.moisturizeCD_05;
+
+            dbga.firstTimeLoad = true;
+        }
 
     }
 
@@ -101,7 +103,6 @@ public class NavigationSystem : MonoBehaviour
         pt.ResetPlantType();
         pt.MergePlantIDList();
         dbga.plantType = pt.savedString;
-        
 
         dbga.moisturizeCD_01 = pt.moisturizesCooldown[0];
         dbga.moisturizeCD_02 = pt.moisturizesCooldown[1];
@@ -116,7 +117,5 @@ public class NavigationSystem : MonoBehaviour
         dbga.growthLevel_05 = pt.waterLevel[4];
 
         dbga._OnSaveData_Garden();
-
-
     }
 }

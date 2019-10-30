@@ -46,14 +46,14 @@ public class ServerTimeManager : MonoBehaviour
         //timerTestLabel.text = www.text;
 
         //these variables are still in string form
-        Debug.Log("The date is : " + words[0]);
-        Debug.Log("The time is : " + words[1]);
-        Debug.Log("Date : " + MMDDYYYY[1]);
-        Debug.Log("Month : " + MMDDYYYY[0]);
-        Debug.Log("Year : " + MMDDYYYY[2]);
-        Debug.Log("Hour : " + HHMMSS[0]);
-        Debug.Log("Minute : " + HHMMSS[1]);
-        Debug.Log("Second : " + HHMMSS[2]);
+        //Debug.Log("The date is : " + words[0]);
+        //Debug.Log("The time is : " + words[1]);
+        //Debug.Log("Date : " + MMDDYYYY[1]);
+        //Debug.Log("Month : " + MMDDYYYY[0]);
+        //Debug.Log("Year : " + MMDDYYYY[2]);
+        //Debug.Log("Hour : " + HHMMSS[0]);
+        //Debug.Log("Minute : " + HHMMSS[1]);
+        //Debug.Log("Second : " + HHMMSS[2]);
 
 
         //change US/eastern time to Asia/Jakarta time
@@ -227,6 +227,8 @@ public class ServerTimeManager : MonoBehaviour
         dbg.getDate = date;
         dbg.getMonth = month;
         dbg.getYear = year;
+        dbg._OnLoadData_General();
+        dbg.GetTimePassed();
     }
 
     void Start()
