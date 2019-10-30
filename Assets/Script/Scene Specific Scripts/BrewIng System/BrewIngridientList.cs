@@ -21,5 +21,9 @@ public class BrewIngridientList : MonoBehaviour
         valueIngridient = dbi.BrewIngredientsList;
 
     }
+
+    public void UpdateIngredientList() {
+        dbi.UpdateIngredientArray();
+    }
 }
 
