@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BrewingSystem : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BrewingSystem : MonoBehaviour
     //reference objects
     public Image drinkResult;
     public Image[] itemSlot;
+    public TextMeshProUGUI[] stockItem;
+
     public Image[] inputSlot;
 
     public DB_AllSprites dbas;
@@ -54,6 +57,22 @@ public class BrewingSystem : MonoBehaviour
         drinkSprites = dbas.allDrink;
         _OnChooseCategory(0);
        
+    }
+    private void Update()
+    {
+        ItemStock();   
+    }
+
+    public void ItemStock()
+    {
+        for(int i=0; i < stockItem.Length; i++)
+        {
+            if(theSlot[i] != -1)
+            {
+                stockItem[i].text = "x"+ bil.valueIngridient[theSlot[i]];
+            }
+            
+        }
     }
     
 
@@ -159,6 +178,8 @@ public class BrewingSystem : MonoBehaviour
             theSlot = etcSlot;
         }
     }
+
+  
 
     public void _OnBrewDrink() {
         Debug.Log("OnBrewDrink");
