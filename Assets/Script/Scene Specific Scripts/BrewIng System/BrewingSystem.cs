@@ -12,8 +12,11 @@ public class BrewingSystem : MonoBehaviour
     public Image drinkResult;
     public Image[] itemSlot;
     public Image[] inputSlot;
-    public Sprite[] ingredientSprites;
-    public Sprite[] drinkSprites;
+
+    public DB_AllSprites dbas;
+    public Sprite []ingredientSprites;
+    public Sprite []drinkSprites;
+
 
     public DB_Ingredients dbi;
     // UI slots
@@ -45,9 +48,10 @@ public class BrewingSystem : MonoBehaviour
     {
         bil = FindObjectOfType<BrewIngridientList>();
         dbi = FindObjectOfType<DB_Ingredients>();
+        dbas = FindObjectOfType<DB_AllSprites>();
 
-        ingredientSprites = dbi.ingredientSprites;
-        drinkSprites = dbi.drinkSprites;
+        ingredientSprites = dbas.allIngridient;
+        drinkSprites = dbas.allDrink;
         _OnChooseCategory(0);
        
     }
@@ -59,17 +63,17 @@ public class BrewingSystem : MonoBehaviour
         CheckCategory(categoryNumber);
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            itemSlot[i].sprite = ingredientSprites[theSlot[i]];
-            itemSlot[i].gameObject.SetActive(true);
-            if (theSlot[i] == 0)
+            
+            if (theSlot[i] == -1)
             {
                 itemSlot[i].gameObject.SetActive(false); 
             }
-        }
-
-        for (int i=0; i<itemSlot.Length; i++)
-        {
-            itemSlot[i].sprite = ingredientSprites[theSlot[i]];
+            else
+            {
+                itemSlot[i].sprite = ingredientSprites[theSlot[i]];
+                itemSlot[i].gameObject.SetActive(true);
+            }
+            
         }
     }
 
@@ -79,6 +83,7 @@ public class BrewingSystem : MonoBehaviour
 
         //
         CheckCategory(categoryNumber);
+        print("Ter[amgg;");
         if (numberOfSlot < 8 && bil.valueIngridient[theSlot[indexButton]] > 0)// bil disini bakal diubah jadi Ingridient Database
         {
             if (bil.isExperimenting == false)// bil disini bakal diubah jadi Ingridient Database
@@ -89,7 +94,7 @@ public class BrewingSystem : MonoBehaviour
             }
             inputSlot[numberOfSlot].gameObject.SetActive(true);
             inputSlot[numberOfSlot].sprite = ingredientSprites[theSlot[indexButton]]; // bil disini bakal diubah jadi Ingridient Database
-            inputIngridientSlot[numberOfSlot] += (char)(64+(int)theSlot[indexButton]);
+            inputIngridientSlot[numberOfSlot] += (char)(65+(int)theSlot[indexButton]);
             print(inputIngridientSlot[numberOfSlot]);
             
             numberOfSlot++;
@@ -99,8 +104,10 @@ public class BrewingSystem : MonoBehaviour
     
     public void _OnResetDrink()
     {
+        //Debug.Log("wooo");
         numberOfSlot = 0;
         comparingSlot = "";
+       
        for(int i=0; i<bil.valueIngridient.Length; i++)// bil disini bakal diubah jadi Ingridient Database
         {
             bil.valueIngridient[i] += bil.valueChange[i];// bil disini bakal diubah jadi Ingridient Database
@@ -114,9 +121,10 @@ public class BrewingSystem : MonoBehaviour
         
       for(int i=0; i < inputSlot.Length; i++)
         {
-            inputSlot[i].sprite = ingredientSprites[0];// bil disini bakal diubah jadi Ingridient Database
+            inputSlot[i].sprite = null;// bil disini bakal diubah jadi Ingridient Database
             inputSlot[i].gameObject.SetActive(false);// bil disini bakal diubah jadi Ingridient Database
         }
+        drinkResult.gameObject.SetActive(false);
     }
 
     void CheckCategory(int x)
@@ -153,6 +161,8 @@ public class BrewingSystem : MonoBehaviour
     }
 
     public void _OnBrewDrink() {
+        Debug.Log("OnBrewDrink");
+       
         //ingredient code sorting process
         Array.Sort(inputIngridientSlot);
         //reverses the array content to prevent empty content from starting the sort result
@@ -169,21 +179,35 @@ public class BrewingSystem : MonoBehaviour
             if(comparingSlot == bil.codeDrink[i])// bil disini bakal diubah jadi Ingridient Database
             {
                 //drink ID exists
-                result = bil.nameDrink[i];// bil disini bakal diubah jadi Ingridient Database
+                result = bil.nameDrink[i];
                 drinkResult.sprite = drinkSprites[i];
-                print("eyyy brah you got " + result);
+                Debug.Log("eyyy brah you got " + result);
+                drinkResult.gameObject.SetActive(true);
                 break;
             }
         }
         //drink not found
         if(result == "")
         {
-            print("Sorry brah you dont get anything");
+            Debug.Log("Sorry brah you dont get anything");
+            drinkResult.sprite = null;
+            drinkResult.gameObject.SetActive(false);
         }
-
+         for (int i = 0; i < inputIngridientSlot.Length; i++)
+        {
+            inputIngridientSlot[i] = '\0';
+        }
+        numberOfSlot = 0;
+        comparingSlot = "";
         for(int i=0; i < bil.valueChange.Length; i++)// bil disini bakal diubah jadi Ingridient Database
         {
             bil.valueChange[i] = 0;// bil disini bakal diubah jadi Ingridient Database
         }
+        for (int i = 0; i < inputSlot.Length; i++)
+        {
+            inputSlot[i].sprite = null;// bil disini bakal diubah jadi Ingridient Database
+            inputSlot[i].gameObject.SetActive(false);// bil disini bakal diubah jadi Ingridient Database
+        }
+
     }
 }
