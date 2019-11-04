@@ -227,6 +227,10 @@ public class ServerTimeManager : MonoBehaviour
         dbg.getDate = date;
         dbg.getMonth = month;
         dbg.getYear = year;
+
+
+        dbg._OnLoadData_General();
+        dbg.GetTimePassed();
     }
 
     void Start()

@@ -40,7 +40,7 @@ public class FrameExchange : MonoBehaviour
         {
             if (ingridientId[i] != -1)
             {
-                ingridientImage[i].sprite = imageDB.allImage[ingridientId[i]];
+                ingridientImage[i].sprite = imageDB.allIngridient[ingridientId[i]];
             }
             else
             {
@@ -49,7 +49,7 @@ public class FrameExchange : MonoBehaviour
             
         }
 
-        resultThing.sprite = imageDB.allImage[ingridientResultId];
+        resultThing.sprite = imageDB.allIngridient[ingridientResultId];
         
         checkAvailable();
     }

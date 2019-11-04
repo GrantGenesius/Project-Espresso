@@ -257,7 +257,11 @@ public class DB_General : MonoBehaviour
     }
 
     void Start() {
-        _OnLoadData_General();
-        GetTimePassed();
+        //_OnLoadData_General();
+        //GetTimePassed();
+    }
+
+    void OnApplicationQuit() {
+        _OnSaveData_General();
     }
 }

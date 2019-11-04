@@ -2090,6 +2090,7 @@ MonoBehaviour:
   colTanahTemp: {fileID: 0}
   initialPosition: {x: 0, y: 0}
   valueWatering: 5
+  secondCoolDown: 86400
   pt: {fileID: 0}
   gc: {fileID: 0}
 --- !u!61 &1453887336
@@ -3889,6 +3890,7 @@ MonoBehaviour:
   colTanahTemp: {fileID: 0}
   initialPosition: {x: 0, y: 0}
   valueWatering: 15
+  secondCoolDown: 120
   pt: {fileID: 0}
   gc: {fileID: 0}
 --- !u!224 &2092884314678079405
@@ -4067,6 +4069,7 @@ MonoBehaviour:
   colTanahTemp: {fileID: 0}
   initialPosition: {x: 0, y: 0}
   valueWatering: 10
+  secondCoolDown: 43200
   pt: {fileID: 0}
   gc: {fileID: 0}
 --- !u!224 &2092884315626364811

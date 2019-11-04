@@ -10,6 +10,7 @@ public class PlantSystem : MonoBehaviour
 
     public Sprite[] forms;
     public int amountWatering;
+    public int holderWater;
     public int[] levelOfWatering;
     public Collider2D currentTanahPlantSystem;
     public Color normalColor;
@@ -38,6 +39,8 @@ public class PlantSystem : MonoBehaviour
     void Update()
     {
         amountWatering = pt.waterLevel[idx];
+        
+        IncreaseAmountofWater();
         TimeDisplay(idx);
         ActivateDisplay();
         WateringStatus();
@@ -51,19 +54,19 @@ public class PlantSystem : MonoBehaviour
 
     public void WateringStatus()
     {
-        if (amountWatering >= levelOfWatering[0] && amountWatering < levelOfWatering[1] && !pt.timerHasStarted[idx])
+        if (amountWatering >= levelOfWatering[0] && amountWatering < levelOfWatering[1] )
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[0];
         }
 
-        if (amountWatering >= levelOfWatering[1] && amountWatering < levelOfWatering[2] && !pt.timerHasStarted[idx])
+        if (amountWatering >= levelOfWatering[1] && amountWatering < levelOfWatering[2] )
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[1];
         }
 
 
 
-        if (amountWatering >= levelOfWatering[2] && !pt.timerHasStarted[idx])
+        if (amountWatering >= levelOfWatering[2] )
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[2];
             collider3rdForm.enabled = true;
@@ -72,7 +75,7 @@ public class PlantSystem : MonoBehaviour
     }
     public void ActivateDisplay()
     {
-        if (pt.hour[idx] <= 0 && pt.minutes[idx] <= 0 && pt.seconds[idx] <= 0)
+        if (pt.hour[idx] <= 0 && pt.minutes[idx] <= 0 && pt.seconds[idx] <= 0.5f)
         {
             coolDownDisplay.gameObject.SetActive(false);
             iNeedWaterSign.SetActive(true);
@@ -119,7 +122,19 @@ public class PlantSystem : MonoBehaviour
         }
 
     }
+    public void IncreaseAmountofWater()
+    {
+        if (!pt.timerHasStarted[idx])
+        {
+            pt.waterLevel[idx] += holderWater;
+            holderWater = 0;
+        }
 
+        if (pt.timerHasStarted[idx])
+        {
+            holderWater = 10;
+        }
+    }
     public void HarvestTree()
     {
         if(amountWatering >= levelOfWatering[2])

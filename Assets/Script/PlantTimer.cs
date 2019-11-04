@@ -13,6 +13,8 @@ public class PlantTimer : MonoBehaviour
     public bool timerIsOn = true;
 
     public int[] waterLevel;
+   
+
     public float[] moisturizesCooldown;
     public float[] minutes;
     public float[] seconds;
@@ -102,6 +104,12 @@ public class PlantTimer : MonoBehaviour
         int counter = 0;
         foreach (float x in moisturizesCooldown) {
             moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
+            if(moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))
+            {
+                moisturizesCooldown[counter] = 0;
+                waterLevel[counter] += 10;
+                timerHasStarted[counter] = false;
+            }
             counter++;
         }
 
@@ -131,10 +139,10 @@ public class PlantTimer : MonoBehaviour
         {
             if(i < plantIDHolder.Length)
             {
-                Debug.Log(ConvertedString[i]);
+               // Debug.Log(ConvertedString[i]);
                 int.TryParse(ConvertedString[i],out plantIDHolder[i]);
                 //plantIDHolder[i] = int.Parse(ConvertedString[i]);
-                Debug.Log(plantIDHolder[i]);
+               // Debug.Log(plantIDHolder[i]);
 
 
             }
