@@ -5,6 +5,7 @@ using UnityEngine;
 public class BrewingPanelManager : MonoBehaviour
 {
     public GameObject allRecipes;
+    
     // Start is called before the first frame update
     void Start()
     {

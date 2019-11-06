@@ -7,6 +7,7 @@ public class PlantSystem : MonoBehaviour
 {
     public DB_Garden dbga;
     public Garden_Connector gc;
+    public NavigationSystem ns;
 
     public Sprite[] forms;
     public int amountWatering;
@@ -32,6 +33,8 @@ public class PlantSystem : MonoBehaviour
         pt = FindObjectOfType<PlantTimer>();
         gc = FindObjectOfType<Garden_Connector>();
         idx = currentTanahPlantSystem.GetComponent<GroundController>().idxGround;
+        ns = FindObjectOfType<NavigationSystem>();
+        holderWater = 0;
 
        pt.plantIDHolder[idx] = typeOfPlant;
     }
@@ -134,6 +137,7 @@ public class PlantSystem : MonoBehaviour
         {
             holderWater = 10;
         }
+        //ns.SaveGarden();
     }
     public void HarvestTree()
     {
@@ -141,8 +145,15 @@ public class PlantSystem : MonoBehaviour
         {
             //masukin instantiate disini
             Destroy(gameObject);
+            pt.moisturizesCooldown[idx] = 0;
+            pt.timerHasStarted[idx] = false;
+           // gc.moistCoolDownHolder[idx] = 0;
+            gc.growthPlantLevelHolder[idx] = 0;
+            currentTanahPlantSystem.GetComponent<GroundController>().moistStatus = false;
+
             pt.plantIDHolder[idx] = -1;
             pt.waterLevel[idx] = 0;
+            ns.SaveGarden();
         }
         
     }

@@ -56,8 +56,9 @@ public class MoisturizesPlant : MonoBehaviour
             }
             else
             {
-                if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus)
+                if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus && colTemp.gameObject.GetComponent<PlantSystem>().amountWatering < 30)
                 {
+                   // pt.waterHolder[colTemp.gameObject.GetComponent<PlantSystem>().idx] += 10;
                     
                     colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
                     pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = secondCoolDown ;

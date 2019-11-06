@@ -17,6 +17,7 @@ public class ServerTimeManager : MonoBehaviour
     private string _timeData;
 
     DB_General dbg;
+    PlantTimer pt;
 
     //make sure there is only one instance of this always.
     void Awake()
@@ -231,11 +232,13 @@ public class ServerTimeManager : MonoBehaviour
 
         dbg._OnLoadData_General();
         dbg.GetTimePassed();
+        pt.ReduceMoistCooldown();
     }
 
     void Start()
     {
         dbg = FindObjectOfType<DB_General>();
+        pt = FindObjectOfType<PlantTimer>();
         StartCoroutine("getTime");
     }
 

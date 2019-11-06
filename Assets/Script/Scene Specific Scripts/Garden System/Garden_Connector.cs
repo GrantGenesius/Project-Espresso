@@ -26,13 +26,14 @@ public class Garden_Connector : MonoBehaviour
         pt = FindObjectOfType<PlantTimer>();
         pt.allGround = groundHolder;
         dbGarden = FindObjectOfType<DB_Garden>();
-        ns.LoadGarden();
+        //ns.LoadGarden();
         //pt.waterLevel = growthPlantLevelHolder;
     }
     
 
     public void loadPlant()
     {
+        pt.allGround = groundHolder;
         for(int i = 0; i<groundHolder.Length; i++)
         {
             if (pt.plantIDHolder[i] != -1) {

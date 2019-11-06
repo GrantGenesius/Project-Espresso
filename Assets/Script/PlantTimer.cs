@@ -7,9 +7,10 @@ public class PlantTimer : MonoBehaviour
 
     public bool[] timerHasStarted;
     public GameObject[] allGround;
+    public NavigationSystem ns;
     public DB_General dbg;
     public DB_Garden dbga;
-
+    public Garden_Connector gc;
     public bool timerIsOn = true;
 
     public int[] waterLevel;
@@ -47,7 +48,16 @@ public class PlantTimer : MonoBehaviour
 
         dbg = FindObjectOfType<DB_General>();
         dbga = FindObjectOfType<DB_Garden>();
-        ReduceMoistCooldown();
+        ns = FindObjectOfType<NavigationSystem>();
+        ns.LoadGarden();
+        //ReduceMoistCooldown();
+        for(int i = 0; i < timerHasStarted.Length; i++)
+        {
+            if (moisturizesCooldown[i] > 0)
+            {
+                timerHasStarted[i] = true;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -73,6 +83,8 @@ public class PlantTimer : MonoBehaviour
                 moisturizesCooldown[i] = 0;
             }
         }
+       
+        
     }
 
     //public void StartTimer()
@@ -103,14 +115,19 @@ public class PlantTimer : MonoBehaviour
     {
         int counter = 0;
         foreach (float x in moisturizesCooldown) {
-            moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
-            if(moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))
+            if(moisturizesCooldown[counter] > 0)
             {
-                moisturizesCooldown[counter] = 0;
-                waterLevel[counter] += 10;
-                timerHasStarted[counter] = false;
+              moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
+                        if(moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))
+                        {
+                            moisturizesCooldown[counter] = 0;
+                            waterLevel[counter] += 10;
+                            timerHasStarted[counter] = false;
+                        }
+                        counter++;
+
             }
-            counter++;
+          
         }
 
     }

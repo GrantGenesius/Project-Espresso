@@ -2211,7 +2211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1539103909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2231,8 +2231,10 @@ MonoBehaviour:
   - {fileID: 2117085930}
   - {fileID: 1242517363}
   - {fileID: 1505385108}
+  ns: {fileID: 0}
   dbg: {fileID: 0}
   dbga: {fileID: 0}
+  gc: {fileID: 0}
   timerIsOn: 1
   waterLevel: 0000000000000000000000000000000000000000
   moisturizesCooldown:
