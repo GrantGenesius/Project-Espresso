@@ -87,14 +87,6 @@ public class PlantTimer : MonoBehaviour
         
     }
 
-    //public void StartTimer()
-    //{
-    //    startTime = 15 * 60;
-    //    timerFinished = false;
-    //    timerStart = true;
-    //}
-
-
     public void StopTimer(int index)
     {
         timerHasStarted[index] = false;
@@ -115,7 +107,10 @@ public class PlantTimer : MonoBehaviour
     {
         int counter = 0;
         foreach (float x in moisturizesCooldown) {
-            if(moisturizesCooldown[counter] > 0)
+            if (dbg._24HrsPassed == true) { 
+               //set all timer to 00:00:01
+            }
+            else if(moisturizesCooldown[counter] > 0)
             {
               moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
                         if(moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))

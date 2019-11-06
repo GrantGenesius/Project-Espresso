@@ -36,10 +36,10 @@ public class ServerTimeManager : MonoBehaviour
     //time fether coroutine
     public IEnumerator getTime()
     {
-        Debug.Log("==> step 1. Getting info from internet now!");
+        //Debug.Log("==> step 1. Getting info from internet now!");
         WWW www = new WWW(_url);
         yield return www;
-        Debug.Log("==> step 2. Got the info from internet!");
+        //Debug.Log("==> step 2. Got the info from internet!");
         _timeData = www.text;
         string[] words = _timeData.Split('/');
         string[] MMDDYYYY = words[0].Split('-');
@@ -47,14 +47,14 @@ public class ServerTimeManager : MonoBehaviour
         //timerTestLabel.text = www.text;
 
         //these variables are still in string form
-        Debug.Log("The date is : " + words[0]);
-        Debug.Log("The time is : " + words[1]);
-        Debug.Log("Date : " + MMDDYYYY[1]);
-        Debug.Log("Month : " + MMDDYYYY[0]);
-        Debug.Log("Year : " + MMDDYYYY[2]);
-        Debug.Log("Hour : " + HHMMSS[0]);
-        Debug.Log("Minute : " + HHMMSS[1]);
-        Debug.Log("Second : " + HHMMSS[2]);
+        //Debug.Log("The date is : " + words[0]);
+        //Debug.Log("The time is : " + words[1]);
+        //Debug.Log("Date : " + MMDDYYYY[1]);
+        //Debug.Log("Month : " + MMDDYYYY[0]);
+        //Debug.Log("Year : " + MMDDYYYY[2]);
+        //Debug.Log("Hour : " + HHMMSS[0]);
+        //Debug.Log("Minute : " + HHMMSS[1]);
+        //Debug.Log("Second : " + HHMMSS[2]);
 
 
         //change US/eastern time to Asia/Jakarta time
