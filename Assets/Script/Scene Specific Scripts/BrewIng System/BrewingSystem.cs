@@ -8,7 +8,8 @@ using TMPro;
 public class BrewingSystem : MonoBehaviour
 {
     public BrewIngridientList bil;
-
+    public DB_Records dbr;
+    public Recipes_Connector rc;
     //reference objects
     public Image drinkResult;
     public Image[] itemSlot;
@@ -52,6 +53,8 @@ public class BrewingSystem : MonoBehaviour
         bil = FindObjectOfType<BrewIngridientList>();
         dbi = FindObjectOfType<DB_Ingredients>();
         dbas = FindObjectOfType<DB_AllSprites>();
+        dbr = FindObjectOfType<DB_Records>();
+        rc = FindObjectOfType<Recipes_Connector>();
 
         ingredientSprites = dbas.allIngridient;
         drinkSprites = dbas.allDrink;
@@ -204,6 +207,10 @@ public class BrewingSystem : MonoBehaviour
                 drinkResult.sprite = drinkSprites[i];
                 Debug.Log("eyyy brah you got " + result);
                 drinkResult.gameObject.SetActive(true);
+                rc.recipesUnlocked[i] = true;
+
+                rc.SavingTemporary();
+                dbr.couponsMade++;
                 break;
             }
         }

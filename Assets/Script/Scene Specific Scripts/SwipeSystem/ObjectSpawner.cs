@@ -7,9 +7,15 @@ public class ObjectSpawner : MonoBehaviour
     public Rigidbody2D spawnedObjects;
     public GameObject spawnPoint;
     public GameObject particle1;
+    public DB_Records dbr;
 
+    public void Start()
+    {
+        dbr = FindObjectOfType<DB_Records>();
+    }
     public void OnSpin()
     {
+        dbr.spinCount++;
         particle1.SetActive(true);
         StartCoroutine(SpawnSequence(1));
     }

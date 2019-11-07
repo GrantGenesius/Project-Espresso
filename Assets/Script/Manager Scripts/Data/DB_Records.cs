@@ -8,6 +8,7 @@ public class DB_Records : MonoBehaviour
     public int spinCount;
     public string unlockedDrinks;
     public string unlockedIngredients;
+    public string unlockedAchievements;
 
 
     [ContextMenu("Record_Save")]
@@ -24,6 +25,7 @@ public class DB_Records : MonoBehaviour
         spinCount = savedData_Records.spinCount;
         unlockedDrinks = savedData_Records.unlockedDrinks;
         unlockedIngredients = savedData_Records.unlockedIngredients;
+       // unlockedAchievements = savedData_Records.unlockedAchievements;
     }
 
 

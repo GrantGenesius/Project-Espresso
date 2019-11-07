@@ -144,22 +144,23 @@ public class PlantTimer : MonoBehaviour
         savedString = "";
     }
 
-    public void ConvertStringtoPlantID() {
+    public void ConvertStringtoPlantID()
+    {
         string[] ConvertedString = savedString.Split('.');
-        
-        for(int i=0; i<ConvertedString.Length; i++)
+
+        for (int i = 0; i < ConvertedString.Length; i++)
         {
-            if(i < plantIDHolder.Length)
+            if (i < plantIDHolder.Length)
             {
-               // Debug.Log(ConvertedString[i]);
-                int.TryParse(ConvertedString[i],out plantIDHolder[i]);
+                // Debug.Log(ConvertedString[i]);
+                int.TryParse(ConvertedString[i], out plantIDHolder[i]);
                 //plantIDHolder[i] = int.Parse(ConvertedString[i]);
-               // Debug.Log(plantIDHolder[i]);
+                // Debug.Log(plantIDHolder[i]);
 
 
             }
-            
-        
+
+
         }
     }
 
