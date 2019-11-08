@@ -6,6 +6,7 @@ using TMPro;
 public class PlantSystem : MonoBehaviour
 {
     public DB_Garden dbga;
+    public DB_Records dbr;
     public Garden_Connector gc;
     public NavigationSystem ns;
 
@@ -30,6 +31,7 @@ public class PlantSystem : MonoBehaviour
     {
         normalColor = gameObject.GetComponent<SpriteRenderer>().color;
         dbga = FindObjectOfType<DB_Garden>();
+        dbr = FindObjectOfType<DB_Records>();
         pt = FindObjectOfType<PlantTimer>();
         gc = FindObjectOfType<Garden_Connector>();
         idx = currentTanahPlantSystem.GetComponent<GroundController>().idxGround;
@@ -67,8 +69,6 @@ public class PlantSystem : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[1];
         }
 
-
-
         if (amountWatering >= levelOfWatering[2] )
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[2];
@@ -76,6 +76,7 @@ public class PlantSystem : MonoBehaviour
             iNeedWaterSign.SetActive(false);
         }
     }
+
     public void ActivateDisplay()
     {
         if (pt.hour[idx] <= 0 && pt.minutes[idx] <= 0 && pt.seconds[idx] <= 0.5f)
@@ -88,13 +89,10 @@ public class PlantSystem : MonoBehaviour
             coolDownDisplay.gameObject.SetActive(true);
             iNeedWaterSign.SetActive(false);
         }
-
-        
     }
+
     public void TimeDisplay(int i)
     {
-
-      
         if (pt.hour[i] < 10)
         {
             coolDownDisplay.text = "0" + (int)pt.hour[i] + " : "; 
@@ -105,7 +103,6 @@ public class PlantSystem : MonoBehaviour
         }
 
 
-        
         if(pt.minutes[i] < 10)
         {
             coolDownDisplay.text += "0"+(int)pt.minutes[i] + " : ";
@@ -125,6 +122,7 @@ public class PlantSystem : MonoBehaviour
         }
 
     }
+
     public void IncreaseAmountofWater()
     {
         if (!pt.timerHasStarted[idx])
@@ -139,6 +137,7 @@ public class PlantSystem : MonoBehaviour
         }
         //ns.SaveGarden();
     }
+
     public void HarvestTree()
     {
         if(amountWatering >= levelOfWatering[2])
@@ -147,13 +146,15 @@ public class PlantSystem : MonoBehaviour
             Destroy(gameObject);
             pt.moisturizesCooldown[idx] = 0;
             pt.timerHasStarted[idx] = false;
-           // gc.moistCoolDownHolder[idx] = 0;
+            //gc.moistCoolDownHolder[idx] = 0;
             gc.growthPlantLevelHolder[idx] = 0;
             currentTanahPlantSystem.GetComponent<GroundController>().moistStatus = false;
 
             pt.plantIDHolder[idx] = -1;
             pt.waterLevel[idx] = 0;
             ns.SaveGarden();
+            dbr.harvestCount++;
+            dbr._OnSaveData_Records();
         }
         
     }
