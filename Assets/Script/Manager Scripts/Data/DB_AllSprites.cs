@@ -6,11 +6,6 @@ public class DB_AllSprites : MonoBehaviour
 {
     public Sprite[] allIngridient;
     public Sprite[] allDrink;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
 
     public DB_AllSprites instance;
@@ -27,9 +22,4 @@ public class DB_AllSprites : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
