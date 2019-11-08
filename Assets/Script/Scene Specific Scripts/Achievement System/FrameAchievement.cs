@@ -37,26 +37,31 @@ public class FrameAchievement : MonoBehaviour
         nameHolder.text = achievementName;
         descHolder.text = achievementDescription;
         claimsReward.interactable = false;
-        if (au.allAchievement[achievementIndex] && !au.alreadyClaimed[achievementIndex])
-        {
-            claimsReward.interactable = true;
-        }
+      
         achievementIcon.sprite = dba.allDrink[recipesIndex];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (arc.allAchievement[achievementIndex] && !arc.alreadyClaimed[achievementIndex])
+        {
+            claimsReward.interactable = true;
+        }
+        else
+        {
+            claimsReward.interactable = false;
+        }
     }
 
     public void claimReward()
     {
         claimsReward.interactable = false;
-        au.alreadyClaimed[achievementIndex] = true;
+        arc.alreadyClaimed[achievementIndex] = true;
         //ar.alreadyClaimed[recipesIndex] = true;
         arc.recipesUnlocked[recipesIndex] = true;
-        arc.SavingTemporary();
+        arc.SavingRecipes();
+        arc.SavingAchievement();
 
     }
 }

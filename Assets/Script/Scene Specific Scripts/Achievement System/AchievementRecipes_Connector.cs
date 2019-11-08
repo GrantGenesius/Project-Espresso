@@ -8,10 +8,13 @@ public class AchievementRecipes_Connector : MonoBehaviour
     public bool[] recipesUnlocked;
     public DB_Records dbr;
     public DB_AllSprites dbas;
-    
+    public bool[] allAchievement;
+    public bool[] alreadyClaimed;
+
     public BrewIngridientList bil;
     public GameObject recipes;
     public string savedRecipesString;
+    public string savedAchievementString;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +32,9 @@ public class AchievementRecipes_Connector : MonoBehaviour
     {
         
         savedRecipesString = dbr.unlockedDrinks;
+        savedAchievementString = dbr.unlockedAchievements;
         ConvertStringToRecipes();
-        
+        ConvertStringToAchivements();
          
 
         
@@ -43,10 +47,17 @@ public class AchievementRecipes_Connector : MonoBehaviour
 
     }
 
-    public void SavingTemporary()
+    public void SavingRecipes()
     {
         ConvertRecipesToString();
         dbr.unlockedDrinks = savedRecipesString;
+        dbr._OnSaveData_Records();
+    }
+
+    public void SavingAchievement()
+    {
+        ConvertAchievementsToString();
+        dbr.unlockedAchievements = savedAchievementString;
         dbr._OnSaveData_Records();
     }
 
@@ -85,6 +96,53 @@ public class AchievementRecipes_Connector : MonoBehaviour
             {
                 savedRecipesString += "0.";
             }
+        }
+    }
+
+    public void ConvertStringToAchivements()
+    {
+        string[] convertedAchievement = savedAchievementString.Split('.');
+        for (int i = 0; i < convertedAchievement.Length; i++)
+        {
+            if (i < allAchievement.Length)
+            {
+                if (convertedAchievement[i] == "0")
+                {
+                    allAchievement[i] = false;
+                }
+                else if(convertedAchievement[i] == "1")
+                {
+                    allAchievement[i] = true;
+                    alreadyClaimed[i] = false;
+                }
+                else if(convertedAchievement[i] == "2")
+                {
+                    allAchievement[i] = true;
+                    alreadyClaimed[i] = true;
+                }
+            }
+
+        }
+    }
+
+    public void ConvertAchievementsToString()
+    {
+        savedAchievementString = "";
+        for (int i = 0; i < allAchievement.Length; i++)
+        {
+            if (allAchievement[i] == false)
+            {
+                savedAchievementString += "0.";
+            }
+            else if(allAchievement[i] == true && alreadyClaimed[i] == false)
+            {
+                savedAchievementString += "1.";
+            }
+            else if(allAchievement[i] == true  && alreadyClaimed[i] == true)
+            {
+                savedAchievementString += "2.";
+            }
+            
         }
     }
 

@@ -4020,8 +4020,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dbr: {fileID: 0}
   arc: {fileID: 0}
-  allAchievement: 010101010101010101010101010101010101
-  alreadyClaimed: 000000000000000000000000000000000000
 --- !u!114 &635574359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12968,6 +12966,9 @@ MonoBehaviour:
   recipesUnlocked: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   dbr: {fileID: 0}
   dbas: {fileID: 0}
+  allAchievement: 010101000001000000000000000000000000
+  alreadyClaimed: 000000000000000000000000000000000000
   bil: {fileID: 0}
   recipes: {fileID: 0}
   savedRecipesString: 
+  savedAchievementString: 

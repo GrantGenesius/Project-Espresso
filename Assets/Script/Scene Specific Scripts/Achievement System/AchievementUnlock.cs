@@ -7,13 +7,11 @@ public class AchievementUnlock : MonoBehaviour
 
     public DB_Records dbr;
     public AchievementRecipes_Connector arc;
-    public bool[] allAchievement;
-    public bool[] alreadyClaimed;
+   
 
     private void Start()
     {
-        dbr = FindObjectOfType<DB_Records>();
-        arc = FindObjectOfType<AchievementRecipes_Connector>();
+       
     }
 
   
