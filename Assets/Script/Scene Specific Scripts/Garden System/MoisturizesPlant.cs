@@ -20,10 +20,12 @@ public class MoisturizesPlant : MonoBehaviour
 
     public PlantTimer pt;
     public Garden_Connector gc;
+    DB_Records dbr;
 
     void Start()
     {
         initialPosition = transform.position;
+        dbr = FindObjectOfType<DB_Records>();
         pt = FindObjectOfType<PlantTimer>();
         gc = FindObjectOfType<Garden_Connector>();
     }
@@ -63,6 +65,8 @@ public class MoisturizesPlant : MonoBehaviour
                     colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
                     pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = secondCoolDown ;
                     pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
+                    dbr.moisturizeCount++;
+                    dbr._OnSaveData_Records();
                 }
                 gameObject.transform.position = initialPosition;
             }
