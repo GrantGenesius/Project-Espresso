@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3144695548384862688}
-  m_LocalRotation: {x: -0, y: -0, z: 0.8945079, w: 0.4470523}
+  m_LocalRotation: {x: -0, y: -0, z: 0.011625478, w: -0.99993247}
   m_LocalPosition: {x: -1.64, y: 1.82, z: 0}
   m_LocalScale: {x: 0.87694687, y: 0.87694687, z: 0.87694687}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 126.89101}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.332}
 --- !u!212 &3144695548384862694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7322885499304307244, guid: 9b35f1b0f205b4f4fb15082900c37f84,
+  m_Sprite: {fileID: -3786537271206310949, guid: 32a6c68105ecfd64e9492aa48c7fdf82,
     type: 3}
   m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_FlipX: 0
@@ -95,6 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3885ff666b7414e956a40671ca8f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moistStatus: 0
+  hovering: 0
+  idxGround: 0
+  tanahColor: {r: 1, g: 1, b: 1, a: 0}
+  pt: {fileID: 0}
 --- !u!58 &-7090179003080661038
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -107,8 +107,11 @@ public class PlantTimer : MonoBehaviour
     {
         int counter = 0;
         foreach (float x in moisturizesCooldown) {
-            if (dbg._24HrsPassed == true) { 
-               //set all timer to 00:00:01
+            if (dbg._24HrsPassed == true) {
+                moisturizesCooldown[counter] = 0;
+                waterLevel[counter] += 10;
+                timerHasStarted[counter] = false;
+                counter++;
             }
             else if(moisturizesCooldown[counter] > 0)
             {

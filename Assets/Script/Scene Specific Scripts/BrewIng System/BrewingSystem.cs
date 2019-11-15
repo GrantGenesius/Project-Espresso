@@ -12,14 +12,33 @@ public class BrewingSystem : MonoBehaviour
     public Recipes_Connector rc;
     //reference objects
     public Image drinkResult;
+    
+    public Image []categoryImage;
     public Image[] itemSlot;
     public TextMeshProUGUI[] stockItem;
+    public TextMeshProUGUI[] NameItem;
+    public Scrollbar itemScrollBar;
 
     public Image[] inputSlot;
+    public ScrollRect scrollSetting;
+    public int categoryManyPage;
 
     public DB_AllSprites dbas;
     public Sprite []ingredientSprites;
     public Sprite []drinkSprites;
+    public Sprite[] categorySprites;
+
+
+    //opening Succ ess brewin
+
+    public GameObject successBrewingFrame;
+    public Image drinkResultImage;
+    public TextMeshProUGUI nameDrink;
+
+    //opening failed brewin
+
+    public GameObject failedBrewingFrame;
+    
 
 
     public DB_Ingredients dbi;
@@ -41,7 +60,7 @@ public class BrewingSystem : MonoBehaviour
     [SerializeField]
     char[] inputIngridientSlot;
     [SerializeField]
-    string comparingSlot;
+    public string comparingSlot;
 
     //public string[] drinkCodes;
     //public string[] drinkNames;
@@ -63,25 +82,27 @@ public class BrewingSystem : MonoBehaviour
     }
     private void Update()
     {
-        ItemStock();   
+        ItemStock();
     }
 
     public void ItemStock()
     {
-        for(int i=0; i < stockItem.Length; i++)
+        for (int i = 0; i < stockItem.Length; i++)
         {
-            if(theSlot[i] != -1)
+            if (theSlot[i] != -1)
             {
-                stockItem[i].text = "x"+ bil.valueIngridient[theSlot[i]];
-            }
-            
+                stockItem[i].text = "x" + bil.valueIngridient[theSlot[i]];
+                NameItem[i].text = "" + bil.nameIngridient[theSlot[i]];
+            }  
         }
+        
     }
     
 
     public void _OnChooseCategory(int x)
     {
         categoryNumber = x;
+        categoryManyPage = 0;
         CheckCategory(categoryNumber);
         for (int i = 0; i < itemSlot.Length; i++)
         {
@@ -94,7 +115,10 @@ public class BrewingSystem : MonoBehaviour
             {
                 itemSlot[i].sprite = ingredientSprites[theSlot[i]];
                 itemSlot[i].gameObject.SetActive(true);
+                categoryManyPage++;
             }
+            itemScrollBar.value = 0;
+            
             
         }
     }
@@ -105,7 +129,7 @@ public class BrewingSystem : MonoBehaviour
 
         //
         CheckCategory(categoryNumber);
-        print("Ter[amgg;");
+        print(indexButton);
         if (numberOfSlot < 8 && bil.valueIngridient[theSlot[indexButton]] > 0)// bil disini bakal diubah jadi Ingridient Database
         {
             if (bil.isExperimenting == false)// bil disini bakal diubah jadi Ingridient Database
@@ -155,6 +179,8 @@ public class BrewingSystem : MonoBehaviour
         if (x == 0)
         {
             theSlot = coffeeSlot;
+           
+            
         }
         else if (x == 1)
         {
@@ -180,6 +206,18 @@ public class BrewingSystem : MonoBehaviour
         {
             theSlot = etcSlot;
         }
+
+        for(int i=0; i < categoryImage.Length; i++)
+        {
+            if(i == x)
+            {
+                categoryImage[i].sprite = categorySprites[0];
+            }
+            else
+            {
+                categoryImage[i].sprite = categorySprites[1];
+            }
+        }
     }
 
   
@@ -202,14 +240,21 @@ public class BrewingSystem : MonoBehaviour
         {
             if(comparingSlot == bil.codeDrink[i])// bil disini bakal diubah jadi Ingridient Database
             {
+                Vector3 startingPosition = drinkResult.rectTransform.position;
+                    
                 //drink ID exists
                 result = bil.nameDrink[i];
                 drinkResult.sprite = drinkSprites[i];
+                drinkResult.SetNativeSize();
+                drinkResult.rectTransform.sizeDelta = new Vector2(drinkResult.rectTransform.sizeDelta.x * (float)0.12, drinkResult.rectTransform.sizeDelta.y *(float)0.12);
+                drinkResult.rectTransform.position = startingPosition;
+
                 Debug.Log("eyyy brah you got " + result);
                 drinkResult.gameObject.SetActive(true);
                 rc.recipesUnlocked[i] = true;
 
                 rc.SavingTemporary();
+                OpenBrewingSuccessPanel(i);
                 dbr.couponsMade++;
                 break;
             }
@@ -220,6 +265,7 @@ public class BrewingSystem : MonoBehaviour
             Debug.Log("Sorry brah you dont get anything");
             drinkResult.sprite = null;
             drinkResult.gameObject.SetActive(false);
+            failedBrewingFrame.SetActive(true);
         }
          for (int i = 0; i < inputIngridientSlot.Length; i++)
         {
@@ -237,5 +283,27 @@ public class BrewingSystem : MonoBehaviour
             inputSlot[i].gameObject.SetActive(false);// bil disini bakal diubah jadi Ingridient Database
         }
 
+    }
+
+   public void OpenBrewingSuccessPanel(int indexDrink)
+        
+    {   
+        successBrewingFrame.SetActive(true);
+        Vector3 startingPosition = drinkResultImage.rectTransform.position;
+        drinkResultImage.sprite = dbas.allDrink[indexDrink];   
+        drinkResultImage.SetNativeSize();
+        drinkResultImage.rectTransform.sizeDelta = new Vector2(drinkResultImage.rectTransform.sizeDelta.x * (float)0.3, drinkResultImage.rectTransform.sizeDelta.y * (float)0.3);
+        drinkResultImage.rectTransform.position = startingPosition;
+        nameDrink.text = bil.nameDrink[indexDrink];
+    }
+
+    public void _OnCloseBrewingSuccessPanel()
+    {
+        successBrewingFrame.SetActive(false);
+    }
+
+    public void _OnCloseFailedSuccessPanel()
+    {
+        failedBrewingFrame.SetActive(false);
     }
 }

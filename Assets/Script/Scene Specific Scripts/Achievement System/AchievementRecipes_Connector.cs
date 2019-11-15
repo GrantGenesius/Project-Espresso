@@ -16,6 +16,8 @@ public class AchievementRecipes_Connector : MonoBehaviour
     public string savedRecipesString;
     public string savedAchievementString;
 
+    public GameObject[] allAchievementFrame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -146,6 +148,45 @@ public class AchievementRecipes_Connector : MonoBehaviour
         }
     }
 
-    
-    
+    public void _OnAllAchievement()
+    {
+        for(int i = 0; i<allAchievement.Length; i++)
+        {
+            allAchievementFrame[i].SetActive(true);
+        }
+    }
+
+    public void _OnClaimableAchievement()
+    {
+        for (int i = 0; i < allAchievement.Length; i++)
+        {
+            if(allAchievement[i] && !alreadyClaimed[i])
+            {
+                allAchievementFrame[i].SetActive(true);
+            }
+            else
+            {
+                allAchievementFrame[i].SetActive(false);
+            }
+            
+        }
+    }
+
+    public void _OnAchievedAchievement()
+    {
+        for (int i = 0; i < allAchievement.Length; i++)
+        {
+            if (allAchievement[i])
+            {
+                allAchievementFrame[i].SetActive(true);
+            }
+            else
+            {
+                allAchievementFrame[i].SetActive(false);
+            }
+        }
+    }
+
+
+
 }

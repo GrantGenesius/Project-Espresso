@@ -38,7 +38,12 @@ public class FrameAchievement : MonoBehaviour
         descHolder.text = achievementDescription;
         claimsReward.interactable = false;
       
+       
+        Vector3 startingPosition = achievementIcon.rectTransform.position;
         achievementIcon.sprite = dba.allDrink[recipesIndex];
+        achievementIcon.SetNativeSize();
+        achievementIcon.rectTransform.sizeDelta = new Vector2(achievementIcon.rectTransform.sizeDelta.x * (float)0.13, achievementIcon.rectTransform.sizeDelta.y * (float)0.13);
+        achievementIcon.rectTransform.position = new Vector3(startingPosition.x + 22, startingPosition.y + 27, startingPosition.z) ;
     }
 
     // Update is called once per frame
