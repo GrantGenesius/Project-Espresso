@@ -13036,8 +13036,8 @@ MonoBehaviour:
   - HHHHHHH
   - GIIIJ
   - JJJJJJJ
-  - VKKK
-  - VIIIJ
+  - KKKV
+  - IIIJV
   - GIY]]_`
   - GIUX]]_`
   - GITX]]_`
@@ -13049,7 +13049,7 @@ MonoBehaviour:
   - GIUU[]]`
   - CIJJJ\
   - CIJJJ\\
-  - MIJJJ
+  - IJJJM
   - IJJJM\
   - T]]]^
   - Q]]]^
@@ -25559,15 +25559,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8894698234515597143, guid: d789766df630e674287079b13ada73fe,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4.1992188
-      objectReference: {fileID: 0}
     - target: {fileID: 8894698235822359261, guid: d789766df630e674287079b13ada73fe,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -6.5195312
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894698234515597143, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.1992188
       objectReference: {fileID: 0}
     - target: {fileID: 2398652065132536660, guid: d789766df630e674287079b13ada73fe,
         type: 3}

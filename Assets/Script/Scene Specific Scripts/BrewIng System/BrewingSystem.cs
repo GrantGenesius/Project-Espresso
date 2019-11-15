@@ -150,7 +150,7 @@ public class BrewingSystem : MonoBehaviour
     
     public void _OnResetDrink()
     {
-        //Debug.Log("wooo");
+        Debug.Log("wooo");
         numberOfSlot = 0;
         comparingSlot = "";
        
@@ -224,7 +224,7 @@ public class BrewingSystem : MonoBehaviour
 
     public void _OnBrewDrink() {
         Debug.Log("OnBrewDrink");
-       
+        comparingSlot = "";
         //ingredient code sorting process
         Array.Sort(inputIngridientSlot);
         //reverses the array content to prevent empty content from starting the sort result
@@ -271,8 +271,7 @@ public class BrewingSystem : MonoBehaviour
         {
             inputIngridientSlot[i] = '\0';
         }
-        numberOfSlot = 0;
-        comparingSlot = "";
+     
         for(int i=0; i < bil.valueChange.Length; i++)// bil disini bakal diubah jadi Ingridient Database
         {
             bil.valueChange[i] = 0;// bil disini bakal diubah jadi Ingridient Database
@@ -282,6 +281,9 @@ public class BrewingSystem : MonoBehaviour
             inputSlot[i].sprite = null;// bil disini bakal diubah jadi Ingridient Database
             inputSlot[i].gameObject.SetActive(false);// bil disini bakal diubah jadi Ingridient Database
         }
+
+        numberOfSlot = 0;
+       
 
     }
 
