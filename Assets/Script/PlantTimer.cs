@@ -50,7 +50,7 @@ public class PlantTimer : MonoBehaviour
         dbga = FindObjectOfType<DB_Garden>();
         ns = FindObjectOfType<NavigationSystem>();
         ns.LoadGarden();
-        //ReduceMoistCooldown();
+        ReduceMoistCooldown();
         for(int i = 0; i < timerHasStarted.Length; i++)
         {
             if (moisturizesCooldown[i] > 0)
@@ -108,10 +108,7 @@ public class PlantTimer : MonoBehaviour
         int counter = 0;
         foreach (float x in moisturizesCooldown) {
             if (dbg._24HrsPassed == true) {
-                moisturizesCooldown[counter] = 0;
-                waterLevel[counter] += 10;
-                timerHasStarted[counter] = false;
-                counter++;
+                dbg.hourPassed = 24;
             }
             else if(moisturizesCooldown[counter] > 0)
             {

@@ -52,23 +52,27 @@ public class MoisturizesPlant : MonoBehaviour
 
     private void OnMouseUp()
     {
-            if (!onTarget)
+            if (!onTarget  || colTanahTemp == null || colTemp == null)
             {
                 gameObject.transform.position = initialPosition;
             }
             else
             {
-                if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus && colTemp.gameObject.GetComponent<PlantSystem>().amountWatering < 30)
-                {
-                   // pt.waterHolder[colTemp.gameObject.GetComponent<PlantSystem>().idx] += 10;
-                    
-                    colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
-                    pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = secondCoolDown ;
-                    pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
-                    dbr.moisturizeCount++;
-                    dbr._OnSaveData_Records();
-                }
-                gameObject.transform.position = initialPosition;
+               
+                
+                    if (!colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus && colTemp.gameObject.GetComponent<PlantSystem>().amountWatering < 30)
+                    {
+                        // pt.waterHolder[colTemp.gameObject.GetComponent<PlantSystem>().idx] += 10;
+
+                        colTanahTemp.gameObject.GetComponent<GroundController>().moistStatus = true;
+                        pt.moisturizesCooldown[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = secondCoolDown;
+                        pt.timerHasStarted[colTanahTemp.gameObject.GetComponent<GroundController>().idxGround] = true;
+                        dbr.moisturizeCount++;
+                        dbr._OnSaveData_Records();
+                    }
+                    gameObject.transform.position = initialPosition;
+                
+                
             }
 
     }

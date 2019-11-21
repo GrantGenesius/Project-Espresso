@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AchievementRecipes_Connector : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class AchievementRecipes_Connector : MonoBehaviour
     public string savedAchievementString;
 
     public GameObject[] allAchievementFrame;
+
+    public GameObject closedClaimReward;
+
+  
 
     // Start is called before the first frame update
     void Start()
@@ -185,6 +190,11 @@ public class AchievementRecipes_Connector : MonoBehaviour
                 allAchievementFrame[i].SetActive(false);
             }
         }
+    }
+
+    public void _OnClosedClaimReward()
+    {
+        closedClaimReward.SetActive(false);
     }
 
 

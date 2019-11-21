@@ -20,8 +20,8 @@ public class PlantSystem : MonoBehaviour
 
     public BoxCollider2D collider3rdForm;
 
-    public TextMeshPro coolDownDisplay;
-    public GameObject iNeedWaterSign;
+    //public TextMeshPro coolDownDisplay;
+    //public GameObject iNeedWaterSign;
     public int typeOfPlant;
     public int idx;
 
@@ -37,6 +37,7 @@ public class PlantSystem : MonoBehaviour
         idx = currentTanahPlantSystem.GetComponent<GroundController>().idxGround;
         ns = FindObjectOfType<NavigationSystem>();
         holderWater = 0;
+        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y + 1.2f, 1);
 
        pt.plantIDHolder[idx] = typeOfPlant;
     }
@@ -46,8 +47,8 @@ public class PlantSystem : MonoBehaviour
         amountWatering = pt.waterLevel[idx];
         
         IncreaseAmountofWater();
-        TimeDisplay(idx);
-        ActivateDisplay();
+        //TimeDisplay(idx);
+       // ActivateDisplay();
         WateringStatus();
     }
 
@@ -73,55 +74,25 @@ public class PlantSystem : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = forms[2];
             collider3rdForm.enabled = true;
-            iNeedWaterSign.SetActive(false);
+           // iNeedWaterSign.SetActive(false);
         }
     }
 
-    public void ActivateDisplay()
-    {
-        if (pt.hour[idx] <= 0 && pt.minutes[idx] <= 0 && pt.seconds[idx] <= 0.5f)
-        {
-            coolDownDisplay.gameObject.SetActive(false);
-            iNeedWaterSign.SetActive(true);
-        }
-        else
-        {
-            coolDownDisplay.gameObject.SetActive(true);
-            iNeedWaterSign.SetActive(false);
-        }
-    }
+    //public void ActivateDisplay()
+    //{
+    //    if (pt.hour[idx] <= 0 && pt.minutes[idx] <= 0 && pt.seconds[idx] <= 0.5f)
+    //    {
+    //        coolDownDisplay.gameObject.SetActive(false);
+    //        iNeedWaterSign.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        coolDownDisplay.gameObject.SetActive(true);
+    //        iNeedWaterSign.SetActive(false);
+    //    }
+    //}
 
-    public void TimeDisplay(int i)
-    {
-        if (pt.hour[i] < 10)
-        {
-            coolDownDisplay.text = "0" + (int)pt.hour[i] + " : "; 
-        }
-        else
-        {
-            coolDownDisplay.text = (int)pt.hour[i] + " : ";
-        }
-
-
-        if(pt.minutes[i] < 10)
-        {
-            coolDownDisplay.text += "0"+(int)pt.minutes[i] + " : ";
-        }
-        else
-        {
-            coolDownDisplay.text += (int)pt.minutes[i] + " : ";
-        }
-
-        
-        if(pt.seconds[i] < 10)
-        {
-            coolDownDisplay.text += "0" + (int)pt.seconds[i];
-        }
-        else{
-            coolDownDisplay.text += (int)pt.seconds[i];
-        }
-
-    }
+   
 
     public void IncreaseAmountofWater()
     {

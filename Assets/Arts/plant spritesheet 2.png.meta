@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: c6852da6c501d9d4798fd3ad93badd28
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3355385219387303442
+    second: 1. Cocoa a
+  - first:
+      213: 2102738812977853329
+    second: 2. Cocoa b
+  - first:
+      213: 606704053359434972
+    second: 3. Cocoa c
+  - first:
+      213: 4085179144143772531
+    second: 4. Coffee d
+  - first:
+      213: -8136509069887805514
+    second: 5. Tea a
+  - first:
+      213: 1696816396410655858
+    second: 6. Tea b
+  - first:
+      213: 4277367973060107566
+    second: 7. Tea c
+  - first:
+      213: -3476145491569636018
+    second: 8. Tea d
+  - first:
+      213: 8526422952229905222
+    second: 9. Coffee a
+  - first:
+      213: -7863329907278003773
+    second: 10. Coffee b
+  - first:
+      213: 1820957913552151916
+    second: 11. Coffee c
+  - first:
+      213: -9040566699015632273
+    second: 12. Coffee d
+  - first:
+      213: -4267220317137212309
+    second: plant spritesheet 2_0
+  - first:
+      213: -38067137477895139
+    second: plant spritesheet 2_1
+  - first:
+      213: -8904881679012583917
+    second: plant spritesheet 2_2
+  - first:
+      213: -6722368939962572311
+    second: plant spritesheet 2_3
+  - first:
+      213: -1512893977986519490
+    second: plant spritesheet 2_4
+  - first:
+      213: 4708780094512226149
+    second: plant spritesheet 2_5
+  - first:
+      213: -8154638857540130342
+    second: plant spritesheet 2_6
+  - first:
+      213: -617324510315278729
+    second: plant spritesheet 2_7
+  - first:
+      213: 7269281102501050915
+    second: plant spritesheet 2_8
+  - first:
+      213: -6081808951804613166
+    second: plant spritesheet 2_9
+  - first:
+      213: -5826095915528980895
+    second: plant spritesheet 2_10
+  - first:
+      213: -1517884213156167907
+    second: plant spritesheet 2_11
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1. Cocoa a
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1671
+        width: 109
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b890a0eda77664aa57da549045d340
+      internalID: -3355385219387303442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2. Cocoa b
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1671
+        width: 126
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ca318d76616f040ae3495dd6df49f3
+      internalID: 2102738812977853329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3. Cocoa c
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1671
+        width: 242
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c99cd4fb16eab4aa376b343656ee6a
+      internalID: 606704053359434972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4. Coffee d
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1667
+        width: 504
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35f7cf15c839f24286e3731b27d365d
+      internalID: 4085179144143772531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5. Tea a
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1671
+        width: 112
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755ae5741995d714ab7737f69990315a
+      internalID: -8136509069887805514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 6. Tea b
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1671
+        width: 108
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bc83d280cd2a94eaad8af5498cd6ec
+      internalID: 1696816396410655858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7. Tea c
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1671
+        width: 116
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e55740b9cb64943ba7da9b5dfbf914
+      internalID: 4277367973060107566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8. Tea d
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 1671
+        width: 249
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68b9f091a4366647b3797050ee292ba
+      internalID: -3476145491569636018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9. Coffee a
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1227
+        width: 116
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f434be6728e2f438d469a4a3529463
+      internalID: 8526422952229905222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 10. Coffee b
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1223
+        width: 133
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa51dc1f10defa4790768e1ed75ac46
+      internalID: -7863329907278003773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 11. Coffee c
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1241
+        width: 203
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a333078075f4ac4b896f738709b296a
+      internalID: 1820957913552151916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12. Coffee d
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1227
+        width: 486
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a80bb889f6f2e46952365b00117b59
+      internalID: -9040566699015632273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1223
+        width: 105
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85b1d5e72d5a7e42b1df2986f1f07fc
+      internalID: -4267220317137212309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 1223
+        width: 101
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee31f015eacc07742b45914abde64822
+      internalID: -38067137477895139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 1220
+        width: 105
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225b29f0a02dd434095181c9d8e01df5
+      internalID: -8904881679012583917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1216
+        width: 270
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b100dd56e27a34793d6ff1ee87c927
+      internalID: -6722368939962572311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 894
+        width: 119
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc04341504aaf742a47696e69b86a0e
+      internalID: -1512893977986519490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 891
+        width: 175
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22eeea0db527acb4092696bd7c958ef2
+      internalID: 4708780094512226149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_6
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 884
+        width: 137
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71def0348bc08344f87085831350c2f6
+      internalID: -8154638857540130342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_7
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 880
+        width: 416
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d12cb94a75dfd48837640a9d6e064a
+      internalID: -617324510315278729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 113
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb81c36db7bcb94095359d4d571990b
+      internalID: 7269281102501050915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_9
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 447
+        width: 193
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339b67faa176a9940b864675b017b2a3
+      internalID: -6081808951804613166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_10
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 440
+        width: 210
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7b8bbf73b82554ea1ef51c43b008bd
+      internalID: -5826095915528980895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plant spritesheet 2_11
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 436
+        width: 297
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9beb78433cdc6a43b29ea2eb14cd713
+      internalID: -1517884213156167907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f4a823cf5fdf70e4c886889c7295f7ce
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

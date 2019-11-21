@@ -362,7 +362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &134302494
 MonoBehaviour:
@@ -1112,6 +1112,48 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 77b955adf9501cb48a14e5e19c356dee, type: 3}
   - {fileID: 21300000, guid: 17522ab212236a349990c50246e7b324, type: 3}
   - {fileID: 21300000, guid: 9d88471d4ccd8554ab3346b7491028a4, type: 3}
+  allDrinkName:
+  - Espresso
+  - Double Shot
+  - Ice Shaken Double Shot
+  - Americano
+  - Espresso Macchiato
+  - Caffe Latte
+  - Asian Dolce Latte
+  - Vanilla Latte
+  - Caramel Latte
+  - Hazelnut Latte
+  - Cappucino
+  - Caffe Mocha
+  - Starbucks Medium roast
+  - Starbucks Dark roast
+  - Cold brew
+  - Vanilla sweet cream cold brew
+  - Hot Chocolate
+  - Cold Chocolate
+  - Vanilla Cream
+  - Chocolate Chip Cream
+  - Green Tea Cream
+  - Green Tea Cream
+  - Coffee
+  - Caramel Java Chip
+  - Mocha
+  - Dark Mocha
+  - Asian Dolce
+  - Java Chip
+  - Raspberry Blackcurrant
+  - Mango Passion Fruit
+  - Iced Shaken Tea
+  - Iced Shaken Lemon Tea
+  - Green Tea Latte
+  - Black Tea Latte
+  - Black Tea (Earl Grey)
+  - Black Tea(English Breakfast)
+  - Black Tea (Choi)
+  - Green Tea(Mint Citrus)
+  - 'Caffeine Free Herbal tea (Chamomile) '
+  - 'Caffeine Free Herbal tea (Mint Blend) '
+  allIngredientName: []
   instance: {fileID: 0}
 --- !u!4 &396230589
 Transform:
@@ -1209,7 +1251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656059399
 GameObject:
@@ -6839,7 +6881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1769889319
 MonoBehaviour:
@@ -7092,7 +7134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1874959814
 GameObject:
@@ -7523,7 +7565,7 @@ PrefabInstance:
     - target: {fileID: 7510694588276997599, guid: d789766df630e674287079b13ada73fe,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 54.7
+      value: 54.69998
       objectReference: {fileID: 0}
     - target: {fileID: 7510694588276997599, guid: d789766df630e674287079b13ada73fe,
         type: 3}
@@ -7569,6 +7611,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398652065365409348, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398652065365409348, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.1143951
+      objectReference: {fileID: 0}
+    - target: {fileID: 8091684721513374221, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.0366821
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d789766df630e674287079b13ada73fe, type: 3}

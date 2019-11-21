@@ -34,6 +34,7 @@ public class BrewingSystem : MonoBehaviour
     public GameObject successBrewingFrame;
     public Image drinkResultImage;
     public TextMeshProUGUI nameDrink;
+    public int couponClaim;
 
     //opening failed brewin
 
@@ -97,6 +98,7 @@ public class BrewingSystem : MonoBehaviour
         }
         
     }
+
     
 
     public void _OnChooseCategory(int x)
@@ -170,7 +172,10 @@ public class BrewingSystem : MonoBehaviour
             inputSlot[i].sprite = null;// bil disini bakal diubah jadi Ingridient Database
             inputSlot[i].gameObject.SetActive(false);// bil disini bakal diubah jadi Ingridient Database
         }
-        drinkResult.gameObject.SetActive(false);
+
+        _OnClaimCoupon();
+        
+        
     }
 
     void CheckCategory(int x)
@@ -219,7 +224,18 @@ public class BrewingSystem : MonoBehaviour
             }
         }
     }
-
+    public void _OnClaimCoupon()
+    {
+        if(couponClaim != -1)
+        {
+            drinkResult.gameObject.SetActive(false);
+            print("you get" + couponClaim);
+            //Nanti dipake buat coupon claim
+            couponClaim = -1;
+        }
+      
+        
+    }
   
 
     public void _OnBrewDrink() {
@@ -252,6 +268,7 @@ public class BrewingSystem : MonoBehaviour
                 Debug.Log("eyyy brah you got " + result);
                 drinkResult.gameObject.SetActive(true);
                 rc.recipesUnlocked[i] = true;
+                couponClaim = i;
 
                 rc.SavingTemporary();
                 OpenBrewingSuccessPanel(i);
@@ -264,7 +281,10 @@ public class BrewingSystem : MonoBehaviour
         {
             Debug.Log("Sorry brah you dont get anything");
             drinkResult.sprite = null;
-            drinkResult.gameObject.SetActive(false);
+
+
+            _OnClaimCoupon();
+
             failedBrewingFrame.SetActive(true);
         }
          for (int i = 0; i < inputIngridientSlot.Length; i++)

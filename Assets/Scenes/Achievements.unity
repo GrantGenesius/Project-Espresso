@@ -359,7 +359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1525046258}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -465,6 +465,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 11
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Coffee Maker
@@ -475,6 +476,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 2014658078}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &98855500
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +635,163 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98855500}
+  m_CullTransparentMesh: 0
+--- !u!1 &110224050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110224051}
+  - component: {fileID: 110224053}
+  - component: {fileID: 110224052}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &110224051
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110224050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 517465142}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &110224052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110224050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: OK
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281484884
+  m_fontColor: {r: 0.3301887, g: 0.27683872, b: 0.19780171, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 69.7
+  m_fontSizeBase: 69.7
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: 0
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 110224052}
+    characterCount: 2
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 1
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &110224053
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110224050}
   m_CullTransparentMesh: 0
 --- !u!1 &141742643
 GameObject:
@@ -1251,7 +1412,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 275998558}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1457,7 +1618,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1968006289}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1563,6 +1724,7 @@ MonoBehaviour:
   achievementIndex: 6
   recipesIndex: 9
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Intermediate Brewer
@@ -1573,6 +1735,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 1460447546}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &292319216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2588,163 @@ RectTransform:
   m_AnchoredPosition: {x: 1, y: -0.98939514}
   m_SizeDelta: {x: -4, y: -0.9911003}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &379339849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379339850}
+  - component: {fileID: 379339852}
+  - component: {fileID: 379339851}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &379339850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379339849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1887643823}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.16900001}
+  m_AnchorMax: {x: 1, y: 0.8307699}
+  m_AnchoredPosition: {x: -0.000030517578, y: 1.800003}
+  m_SizeDelta: {x: 34.599976, y: 3.399994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &379339851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379339849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: You have unlocked
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280821800
+  m_fontColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 96.65
+  m_fontSizeBase: 96.65
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 258
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 379339851}
+    characterCount: 17
+    spriteCount: 0
+    spaceCount: 2
+    wordCount: 3
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &379339852
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379339849}
+  m_CullTransparentMesh: 0
 --- !u!1 &384849428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +3025,7 @@ MonoBehaviour:
   achievementIndex: 1
   recipesIndex: 4
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Starbucks Sitter Lv 2
@@ -2713,6 +3036,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 626013647}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &476861504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,7 +3121,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 885615259}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3084,7 +3410,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1668838235}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3291,6 +3617,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506890919}
   m_CullTransparentMesh: 0
+--- !u!1 &517465141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 517465142}
+  - component: {fileID: 517465145}
+  - component: {fileID: 517465144}
+  - component: {fileID: 517465143}
+  m_Layer: 5
+  m_Name: Button OK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &517465142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517465141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 110224051}
+  m_Father: {fileID: 1598123135}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.32087347, y: 0.15114246}
+  m_AnchorMax: {x: 0.7046692, y: 0.2336657}
+  m_AnchoredPosition: {x: 0.5509033, y: 10}
+  m_SizeDelta: {x: -5.7300034, y: 2.399994}
+  m_Pivot: {x: 0.5, y: 0.49999988}
+--- !u!114 &517465143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517465141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 517465144}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3899834772509165430}
+        m_MethodName: _OnClosedClaimReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &517465144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517465141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 4264781993441208466, guid: 32a6c68105ecfd64e9492aa48c7fdf82,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &517465145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517465141}
+  m_CullTransparentMesh: 0
 --- !u!1 &563989481
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,7 +3832,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 656497902}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3868,6 +4327,7 @@ MonoBehaviour:
   achievementIndex: 0
   recipesIndex: 3
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Starbucks Sitter Lv 1
@@ -3878,6 +4338,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 301437618}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &626013645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4003,7 +4466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31, y: -1961.6477}
+  m_AnchoredPosition: {x: -31, y: -1944.0009}
   m_SizeDelta: {x: 0, y: 3888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635574357
@@ -4100,6 +4563,7 @@ MonoBehaviour:
   achievementIndex: 4
   recipesIndex: 7
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Starbucks Adventurer
@@ -4110,6 +4574,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 330598170}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &684050352
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,6 +4633,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 12
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Coffee Geek
@@ -4176,6 +4644,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 239709295}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &750013283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,7 +4729,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1785148247}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4871,8 +5342,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067376955}
   m_HandleRect: {fileID: 1067376954}
   m_Direction: 3
-  m_Value: 1.004539
-  m_Size: 0.20076516
+  m_Value: 1.0000001
+  m_Size: 0.20587148
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5155,7 +5626,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1703205228}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5575,6 +6046,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 16
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Local Farmer
@@ -5585,6 +6057,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 1818729694}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &901162270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,7 +6613,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1745251227}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6282,6 +6757,7 @@ RectTransform:
   - {fileID: 1205087738}
   - {fileID: 1585563986}
   - {fileID: 1067886940}
+  - {fileID: 1598123135}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6346,6 +6822,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 18
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Rain above plant
@@ -6356,6 +6833,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 377430386}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &988978165
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,6 +7498,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2398652065365409348, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398652065365409348, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.1144028
+      objectReference: {fileID: 0}
+    - target: {fileID: 8091684721513374221, guid: d789766df630e674287079b13ada73fe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.0366821
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d789766df630e674287079b13ada73fe, type: 3}
 --- !u!224 &1067886940 stripped
@@ -7183,7 +7678,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 70210565}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7546,7 +8041,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 987380331}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7775,6 +8270,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 19
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Water
@@ -7785,6 +8281,83 @@ MonoBehaviour:
   achievementIcon: {fileID: 801112062}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
+--- !u!1 &1250842764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250842765}
+  - component: {fileID: 1250842767}
+  - component: {fileID: 1250842766}
+  m_Layer: 5
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1250842765
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250842764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598123135}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1250842766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250842764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1250842767
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250842764}
+  m_CullTransparentMesh: 0
 --- !u!1 &1255598396
 GameObject:
   m_ObjectHideFlags: 0
@@ -7859,6 +8432,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255598396}
+  m_CullTransparentMesh: 0
+--- !u!1 &1265028241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265028242}
+  - component: {fileID: 1265028244}
+  - component: {fileID: 1265028243}
+  m_Layer: 5
+  m_Name: DrinkResult
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1265028242
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265028241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598123135}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.23221555, y: 0.30742735}
+  m_AnchorMax: {x: 0.76111907, y: 0.73714244}
+  m_AnchoredPosition: {x: 14.798, y: 18}
+  m_SizeDelta: {x: -62, y: -88.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1265028243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265028241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 013444a145de2614cab788c6ce019143, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1265028244
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265028241}
   m_CullTransparentMesh: 0
 --- !u!1 &1273336557
 GameObject:
@@ -8016,7 +8663,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 617207750}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8745,7 +9392,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 684050354}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9572,7 +10219,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1218657417}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9678,6 +10325,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 15
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Gardener
@@ -9688,6 +10336,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 170519151}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &1546314451
 GameObject:
   m_ObjectHideFlags: 0
@@ -9770,7 +10421,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2069875260}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9902,7 +10553,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1991964595}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10419,6 +11070,47 @@ RectTransform:
   m_AnchoredPosition: {x: 1, y: -0.98939514}
   m_SizeDelta: {x: -4, y: -0.9911003}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1598123134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598123135}
+  m_Layer: 5
+  m_Name: Claiming
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1598123135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598123134}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0004011, y: 1.0004011, z: 1.0004011}
+  m_Children:
+  - {fileID: 1250842765}
+  - {fileID: 1802495039}
+  - {fileID: 1814833823}
+  - {fileID: 1887643823}
+  - {fileID: 1265028242}
+  - {fileID: 517465142}
+  m_Father: {fileID: 985441798}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -10.192871}
+  m_SizeDelta: {x: -0.33666992, y: 14.424316}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1621732266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10864,6 +11556,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 17
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Moisture
@@ -10874,6 +11567,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 764762862}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &1703205226
 GameObject:
   m_ObjectHideFlags: 0
@@ -10930,6 +11626,7 @@ MonoBehaviour:
   achievementIndex: 3
   recipesIndex: 6
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Starbucks Explorer
@@ -10940,6 +11637,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 384849430}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &1709855765
 GameObject:
   m_ObjectHideFlags: 0
@@ -11129,6 +11829,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 10
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Starbucks Barista
@@ -11139,6 +11840,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 166078368}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &1761593588
 GameObject:
   m_ObjectHideFlags: 0
@@ -11583,6 +12287,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 14
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Coffniscient
@@ -11593,6 +12298,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 1597332243}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &1789231558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11825,7 +12533,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 467618558}
-        m_MethodName: claimReward
+        m_MethodName: ClaimReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11874,6 +12582,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800303289}
+  m_CullTransparentMesh: 0
+--- !u!1 &1802495038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1802495039}
+  - component: {fileID: 1802495041}
+  - component: {fileID: 1802495040}
+  m_Layer: 5
+  m_Name: Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1802495039
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802495038}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598123135}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.11476197, y: 0.163}
+  m_AnchorMax: {x: 0.9235614, y: 0.8416657}
+  m_AnchoredPosition: {x: -6, y: -67.9}
+  m_SizeDelta: {x: 38.8, y: 13.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1802495040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802495038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: da215b3d8acb9da48bf904a816f326ba, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1802495041
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802495038}
   m_CullTransparentMesh: 0
 --- !u!1 &1806662461
 GameObject:
@@ -12031,6 +12813,163 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806662461}
+  m_CullTransparentMesh: 0
+--- !u!1 &1814833822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814833823}
+  - component: {fileID: 1814833825}
+  - component: {fileID: 1814833824}
+  m_Layer: 5
+  m_Name: Name Drink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1814833823
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814833822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1598123135}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.11476197, y: 0.259}
+  m_AnchorMax: {x: 0.90244615, y: 0.3396657}
+  m_AnchoredPosition: {x: 4.300049, y: -2}
+  m_SizeDelta: {x: 6.9000244, y: -11.100006}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1814833824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814833822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: Caramel Machiatto
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 72
+  m_fontSizeBase: 112.6
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 258
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 1814833824}
+    characterCount: 17
+    spriteCount: 0
+    spaceCount: 1
+    wordCount: 2
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1814833825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814833822}
   m_CullTransparentMesh: 0
 --- !u!1 &1818729693
 GameObject:
@@ -12577,6 +13516,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0.6000061, y: -2.6000137}
   m_SizeDelta: {x: 1.2000008, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1887643822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1887643823}
+  - component: {fileID: 1887643825}
+  - component: {fileID: 1887643824}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1887643823
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887643822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 379339850}
+  m_Father: {fileID: 1598123135}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.11476197, y: 0.7092879}
+  m_AnchorMax: {x: 0.9235614, y: 0.8416657}
+  m_AnchoredPosition: {x: -5.799988, y: -37.5}
+  m_SizeDelta: {x: 38.4, y: 67.3}
+  m_Pivot: {x: 0.5, y: 0.50000024}
+--- !u!114 &1887643824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887643822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 4264781993441208466, guid: 32a6c68105ecfd64e9492aa48c7fdf82,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1887643825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887643822}
+  m_CullTransparentMesh: 0
 --- !u!1 &1909960995
 GameObject:
   m_ObjectHideFlags: 0
@@ -13073,6 +14088,7 @@ MonoBehaviour:
   achievementIndex: 2
   recipesIndex: 5
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Starbucks Visitor
@@ -13083,6 +14099,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 2067550249}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &1991964593
 GameObject:
   m_ObjectHideFlags: 0
@@ -13139,6 +14158,7 @@ MonoBehaviour:
   achievementIndex: 7
   recipesIndex: 13
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Coffee Scientist
@@ -13149,6 +14169,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 1763180025}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!1 &2014658077
 GameObject:
   m_ObjectHideFlags: 0
@@ -13353,6 +14376,7 @@ MonoBehaviour:
   achievementIndex: 5
   recipesIndex: 8
   dba: {fileID: 0}
+  bil: {fileID: 0}
   dbr: {fileID: 0}
   arc: {fileID: 0}
   achievementName: Basic Coffee Maker
@@ -13363,6 +14387,9 @@ MonoBehaviour:
   achievementIcon: {fileID: 1273336559}
   au: {fileID: 0}
   ar: {fileID: 0}
+  unlockedRecipes: {fileID: 1598123134}
+  imageResult: {fileID: 1265028243}
+  nameResult: {fileID: 1814833824}
 --- !u!4 &1438163456865604182
 Transform:
   m_ObjectHideFlags: 0
@@ -13433,3 +14460,4 @@ MonoBehaviour:
   - {fileID: 1668838233}
   - {fileID: 987380329}
   - {fileID: 1218657415}
+  closedClaimReward: {fileID: 1598123134}

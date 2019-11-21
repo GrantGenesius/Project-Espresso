@@ -6,6 +6,8 @@ public class DB_AllSprites : MonoBehaviour
 {
     public Sprite[] allIngridient;
     public Sprite[] allDrink;
+    public string[] allDrinkName;
+    public string[] allIngredientName;
 
 
     public DB_AllSprites instance;

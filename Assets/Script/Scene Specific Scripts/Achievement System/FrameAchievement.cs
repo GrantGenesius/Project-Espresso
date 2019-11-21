@@ -11,6 +11,7 @@ public class FrameAchievement : MonoBehaviour
     public int achievementIndex; // ID of Achievement
     public int recipesIndex; // ID of Reward
     public DB_AllSprites dba;
+    public BrewIngridientList bil;
     public DB_Records dbr;
     public AchievementRecipes_Connector arc;
 
@@ -26,6 +27,11 @@ public class FrameAchievement : MonoBehaviour
     public AchievementUnlock au;
     public AllRecipes ar;
 
+
+    public GameObject unlockedRecipes;
+    public Image imageResult;
+    public TextMeshProUGUI nameResult;
+
     void Start()
     {
         au = FindObjectOfType<AchievementUnlock>();
@@ -33,6 +39,7 @@ public class FrameAchievement : MonoBehaviour
         dba = FindObjectOfType<DB_AllSprites>();
         dbr = FindObjectOfType<DB_Records>();
         arc = FindObjectOfType<AchievementRecipes_Connector>();
+        bil = FindObjectOfType<BrewIngridientList>();
         //=============================================== Ubah, masukin Database
         nameHolder.text = achievementName;
         descHolder.text = achievementDescription;
@@ -59,7 +66,7 @@ public class FrameAchievement : MonoBehaviour
         }
     }
 
-    public void claimReward()
+    public void ClaimReward()
     {
         claimsReward.interactable = false;
         arc.alreadyClaimed[achievementIndex] = true;
@@ -68,5 +75,17 @@ public class FrameAchievement : MonoBehaviour
         arc.SavingRecipes();
         arc.SavingAchievement();
 
+        Vector3 startingPosition = imageResult.transform.position;
+        unlockedRecipes.SetActive(true);
+        imageResult.sprite = dba.allDrink[recipesIndex];
+        imageResult.SetNativeSize();
+        imageResult.rectTransform.sizeDelta = new Vector2(imageResult.rectTransform.sizeDelta.x * (float)0.4, imageResult.rectTransform.sizeDelta.y * (float)0.4);
+        imageResult.rectTransform.position = startingPosition;
+        nameResult.text = dba.allDrinkName[recipesIndex];
+
+    }
+    public void CloseClaimReward()
+    {
+        unlockedRecipes.SetActive(false);
     }
 }

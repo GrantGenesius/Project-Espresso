@@ -7,7 +7,9 @@ public class NavigationSystem : MonoBehaviour
 {
     public Animator anim;
     public BrewIngridientList bil;
-    
+    public BrewingSystem bs;
+
+
     bool navigationActive;
 
     void Start()
@@ -34,6 +36,15 @@ public class NavigationSystem : MonoBehaviour
     {
         if (CheckScene() == "Garden")
             SaveGarden();
+
+        if (CheckScene() == "Brewing")
+        {
+            bs = FindObjectOfType<BrewingSystem>();
+            bs._OnResetDrink();
+            bs._OnClaimCoupon();
+        }
+             
+
         SceneManager.LoadScene(levelName);
     }
 
