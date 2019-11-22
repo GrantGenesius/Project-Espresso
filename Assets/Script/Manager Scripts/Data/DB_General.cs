@@ -261,6 +261,7 @@ public class DB_General : MonoBehaviour
     void Start() {
         //_OnLoadData_General();
         //GetTimePassed();
+        //transform.parent = null;
     }
 
     void FixedUpdate() {
