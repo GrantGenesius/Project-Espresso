@@ -7,6 +7,7 @@ public class Garden_Connector : MonoBehaviour
     // Start is called before the first frame update
 
     public PlantTimer pt;
+    public DB_General  dbg;
     public GroundController gc;
     public NavigationSystem ns;
     public DB_Garden dbGarden;
@@ -18,6 +19,7 @@ public class Garden_Connector : MonoBehaviour
     {
         pt.ConvertStringtoPlantID();
         loadPlant();
+        ReduceMoistCooldown();
     }
 
     public void Awake()
@@ -25,11 +27,40 @@ public class Garden_Connector : MonoBehaviour
         ns = FindObjectOfType<NavigationSystem>();
         pt = FindObjectOfType<PlantTimer>();
         pt.allGround = groundHolder;
+        dbg = FindObjectOfType<DB_General>();
         dbGarden = FindObjectOfType<DB_Garden>();
+        
         //ns.LoadGarden();
         //pt.waterLevel = growthPlantLevelHolder;
     }
-    
+    public void ReduceMoistCooldown()
+    {
+        int counter = 0;
+        foreach (float x in pt.moisturizesCooldown)
+        {
+            if (dbg._24HrsPassed == true)
+            {
+                pt.moisturizesCooldown[counter] = 0;
+                pt.waterLevel[counter] += 10;
+                pt.timerHasStarted[counter] = false;
+                counter++;
+            }
+            else if (pt.moisturizesCooldown[counter] > 0)
+            {
+                pt.moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
+                if (pt.moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))
+                {
+                    pt.moisturizesCooldown[counter] = 0;
+                    pt.waterLevel[counter] += 10;
+                    pt.timerHasStarted[counter] = false;
+                }
+                counter++;
+
+            }
+
+        }
+
+    }
 
     public void loadPlant()
     {
