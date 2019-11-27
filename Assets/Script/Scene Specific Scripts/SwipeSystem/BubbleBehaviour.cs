@@ -12,6 +12,8 @@ public class BubbleBehaviour : MonoBehaviour
     public int ingredientType;
     public TextMeshPro text;
 
+    public SpriteRenderer ingredientSprite;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -45,8 +47,9 @@ public class BubbleBehaviour : MonoBehaviour
             dbi.BrewIngredientsList[ingredientID]++;
         }
         text.text = "" + ingredientID;
-        //set image here
 
+        //set image here
+        ingredientSprite.sprite = DB_AllSprites.instance.allIngridient[ingredientID];
     }
 
 }

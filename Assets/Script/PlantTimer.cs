@@ -40,6 +40,7 @@ public class PlantTimer : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
     void Start()

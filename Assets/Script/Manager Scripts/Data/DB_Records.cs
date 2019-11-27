@@ -49,6 +49,7 @@ public class DB_Records : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
 

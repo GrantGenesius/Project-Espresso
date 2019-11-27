@@ -66,6 +66,7 @@ public class DB_Garden : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
 

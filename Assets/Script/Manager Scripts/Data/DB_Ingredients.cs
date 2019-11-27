@@ -143,6 +143,7 @@ public class DB_Ingredients : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
 

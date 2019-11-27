@@ -77,7 +77,6 @@ public class NavigationSystem : MonoBehaviour
     public void OnApplicationQuit()
     {
         SaveGarden();
-        Debug.Log("Save Garden Bou");
     }
 
     public void LoadGarden() {

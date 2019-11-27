@@ -26,6 +26,7 @@ public class GeoLocation : MonoBehaviour
     void Start()
     {
         Instance = this;
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
         StartCoroutine(StartLocationServices());
     }
@@ -93,9 +94,9 @@ public class GeoLocation : MonoBehaviour
             }
         }
         if(onSite == false){
-            //replace text with a manager object for that scene because this object has singletonian value and therefore shouldnt be 
+            //replace text with a manager object for that scene because this object has singleton value and therefore shouldnt be 
             //referencing any object directly
-            //should this object even be singletonian?
+            //should this object even be singleton?
 
             //text.text = "You're currently not near any Starbucks, please turn on location on your phone and go near a Starbucks";
         }

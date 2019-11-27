@@ -10,7 +10,7 @@ public class DB_AllSprites : MonoBehaviour
     public string[] allIngredientName;
 
 
-    public DB_AllSprites instance;
+    public static DB_AllSprites instance;
     private void Awake()
     {
         if (instance == null)
@@ -21,6 +21,7 @@ public class DB_AllSprites : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
 
