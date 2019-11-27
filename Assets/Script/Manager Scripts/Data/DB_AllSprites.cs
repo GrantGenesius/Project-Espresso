@@ -11,6 +11,7 @@ public class DB_AllSprites : MonoBehaviour
 
 
     public static DB_AllSprites instance;
+
     private void Awake()
     {
         if (instance == null)

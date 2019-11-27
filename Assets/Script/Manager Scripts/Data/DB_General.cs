@@ -271,6 +271,10 @@ public class DB_General : MonoBehaviour
 
     }
 
+    void OnApplicationPause() {
+        OnApplicationQuit();
+    }
+
     void OnApplicationQuit() {
         int stopwatch;
         int extraSeconds;

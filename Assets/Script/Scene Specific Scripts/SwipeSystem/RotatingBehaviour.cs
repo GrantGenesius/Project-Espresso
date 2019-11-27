@@ -19,14 +19,18 @@ public class RotatingBehaviour : MonoBehaviour
 
     public ObjectSpawner os;
     public GameObject particle1;
+    public Animator anm;
 
     void Start()
     {
         transform.Rotate(0, 1, 0);
+        anm = GetComponent<Animator>();
     }
 
     void Update()
     {
+
+        //transform.Rotate(0, currDirection, 0);
         if (spinCDAvailable)
         {
             if (swipeControls.SwipeLeft)
@@ -36,6 +40,7 @@ public class RotatingBehaviour : MonoBehaviour
                 os.OnSpin();
                 spinPower = spinPowerMultiplier;
                 currDirection = 1;
+                spinCDAvailable = false;
             }
             if (swipeControls.SwipeRight)
             {
@@ -44,6 +49,7 @@ public class RotatingBehaviour : MonoBehaviour
                 os.OnSpin();
                 spinPower = -spinPowerMultiplier;
                 currDirection = -1;
+                spinCDAvailable = false;
             }
             if (swipeControls.Tap)
             {
@@ -55,7 +61,6 @@ public class RotatingBehaviour : MonoBehaviour
         //spinObject.transform.position = Vector3.MoveTowards(spinObject.transform.position, desiredPosition, 3f*Time.deltaTime);
         //add an if statement here to enable this spin function
         transform.Rotate(0, spinPower, 0);
-
 
         //slowly resets spinPower to 0
         if(spinPower > 0){
@@ -75,12 +80,17 @@ public class RotatingBehaviour : MonoBehaviour
         //mouse drag object rotation
         if (Input.GetMouseButton(0))
         {
+            anm.SetBool("Shrink", true);
             cursorCurrPos = Input.mousePosition - cursorPrevPos;
             transform.Rotate(transform.up, -Vector3.Dot(cursorCurrPos, Camera.main.transform.right), Space.World);
+            
         }
-        else if(spinPower == 0) {
+        else if (spinPower == 0)
+        {
+            anm.SetBool("Shrink", false);
             //constant slow rotation
-            if(spinCDAvailable == true){
+            if (spinCDAvailable == true)
+            {
                 transform.Rotate(0, currDirection, 0);
             }
         }

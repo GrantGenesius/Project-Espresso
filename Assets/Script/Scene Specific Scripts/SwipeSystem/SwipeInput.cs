@@ -8,10 +8,6 @@ public class SwipeInput : MonoBehaviour
     private bool isDragging = false;
     private Vector2 startTouch, swipeDelta;
 
-    void Start()
-    {
-        
-    }
     
     private void Update()
     {

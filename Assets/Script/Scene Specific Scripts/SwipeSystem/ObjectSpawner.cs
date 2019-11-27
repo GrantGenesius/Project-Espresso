@@ -7,16 +7,12 @@ public class ObjectSpawner : MonoBehaviour
     public Rigidbody2D spawnedObjects;
     public GameObject spawnPoint;
     public GameObject particle1;
-    public DB_Records dbr;
 
-    public void Start()
-    {
-        dbr = FindObjectOfType<DB_Records>();
-    }
+
     public void OnSpin()
     {
-        dbr.spinCount++;
-        particle1.SetActive(true);
+        DB_Records.instance.spinCount++;
+        //particle1.SetActive(true);
         StartCoroutine(SpawnSequence(1));
     }
 
@@ -25,13 +21,14 @@ public class ObjectSpawner : MonoBehaviour
         yield return new WaitForSeconds(duration);
         CancelInvoke("SpawnObjects");
 
-        yield return new WaitForSeconds(duration*3);
-        particle1.SetActive(false);
+        yield return new WaitForSeconds(duration * 3);
+        //particle1.SetActive(false);
     }
 
     public void SpawnObjects() {
         Instantiate(spawnedObjects, spawnPoint.transform.position, Quaternion.identity);
 
+        //adds an initial upforce to the bubbles
         //Rigidbody2D instance = Instantiate(spawnedObjects, spawnPoint);
         //instance.velocity = Random.insideUnitSphere * 5;
         //instance.AddForce(transform.up * 5);

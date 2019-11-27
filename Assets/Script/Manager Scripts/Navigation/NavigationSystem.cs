@@ -74,6 +74,11 @@ public class NavigationSystem : MonoBehaviour
         }
     }
 
+    void OnApplicationPause() 
+    {
+        SaveGarden();
+    }
+
     public void OnApplicationQuit()
     {
         SaveGarden();
