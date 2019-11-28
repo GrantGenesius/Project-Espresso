@@ -25,6 +25,7 @@ public class TimeCounter : MonoBehaviour
         dbg = FindObjectOfType<DB_General>();
         startTime *= 60;
         miliSecond = Time.time;
+        StartTimer();
     }
 
     //void FixedUpdate()

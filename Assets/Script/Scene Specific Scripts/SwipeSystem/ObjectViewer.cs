@@ -11,7 +11,11 @@ public class ObjectViewer : MonoBehaviour
     public bool RotationEnabled;
 
     //Speed
-    float arrowMouseSpeed = 1.0f;
+    float arrowMouseSpeed = 5.0f;
+
+    void OnEnable() {
+        RotationEnabled = false;
+    }
 
     void Start()
     {
@@ -135,7 +139,7 @@ public class ObjectViewer : MonoBehaviour
 
     void moveCamera(float horizontal, float verticle, float moveSpeed)
     {
-        mouseX = horizontal;
+        mouseX = -horizontal;
         mouseY = -verticle;
 
         rotX = Mathf.Clamp(rotX, -30, 30);

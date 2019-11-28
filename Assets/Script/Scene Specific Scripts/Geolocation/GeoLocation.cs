@@ -44,15 +44,14 @@ public class GeoLocation : MonoBehaviour
         }
 
         Input.location.Start();
-        // memberi waktu menunggu 20 detik untuk mendapatkan akses GPS
-        int maxWait = 20;
+        // memberi waktu menunggu 5 detik untuk mendapatkan akses GPS
+        int maxWait = 5;
         while (Input.location.status == LocationServiceStatus.Initializing
                 && maxWait > 0)
         {
             yield return new WaitForSeconds(1);
             maxWait--;
         }
-        // kalo lewat 20 detik ya berarti gagal koneksi
         if (maxWait <= 0)
         {
             Debug.Log("Timed out");
