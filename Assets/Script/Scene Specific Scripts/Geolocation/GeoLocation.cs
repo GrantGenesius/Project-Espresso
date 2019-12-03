@@ -6,32 +6,31 @@ using TMPro;
 
 public class GeoLocation : MonoBehaviour
 {
-
-    public static GeoLocation Instance { set; get; }
+    public SpinUIManager SUM;
+    public RotatingBehaviour RB;
     //current status and location
     float latitude;
     float longitude;
     string status;
 
     public float distanceRadius;
-    public TextMeshPro text;
 
     //lists of location and name
     public Vector2[] latitudelongitude;
     public string[] locationName;
     [Range(0, 2)]
     public int[] locationType;
+    public bool onSite = false;
+    public bool locationActive = false;
+    //displaying location name
 
 
     void Start()
     {
-        Instance = this;
-        transform.parent = null;
-        DontDestroyOnLoad(gameObject);
         StartCoroutine(StartLocationServices());
     }
 
-    private IEnumerator StartLocationServices()
+    public IEnumerator StartLocationServices()
     {
         Input.location.Start();
         if (!Input.location.isEnabledByUser)
@@ -40,6 +39,9 @@ public class GeoLocation : MonoBehaviour
             //GPS
             Debug.Log("GPS is not enabled by user");
             status = "GPS is not enabled by user";
+            SUM.notificationText.text = "GPS is disabled";
+            SUM.RequestRefreshLocation();
+            //SUM.DisableObjectViewButton();
             yield break;
         }
 
@@ -56,6 +58,9 @@ public class GeoLocation : MonoBehaviour
         {
             Debug.Log("Timed out");
             status = "Timed Out";
+            SUM.notificationText.text = "Connection timed out";
+            SUM.RequestRefreshLocation();
+            //SUM.DisableObjectViewButton();
             yield break;
         }
 
@@ -63,24 +68,22 @@ public class GeoLocation : MonoBehaviour
         {
             Debug.Log("Unable to determine device location");
             status = "Unable to determine device location";
+            SUM.notificationText.text = "Unable to determine device location";
+            SUM.RequestRefreshLocation();
+            //SUM.DisableObjectViewButton();
             yield break;
         }
 
         latitude = Input.location.lastData.latitude;
         longitude = Input.location.lastData.longitude;
+        //SUM.EnableObjectViewButton();
+        SUM.RefreshLocationImage();
+        CheckLocation();
 
         yield break;
     }
 
-    void Update()
-    {
-        latitude = Input.location.lastData.latitude;
-        longitude = Input.location.lastData.longitude;
-        CheckLocation();
-    }
-
     void CheckLocation() {
-        bool onSite = false;
         for (int i = 0; i < latitudelongitude.Length; i++ )
         {
             if (latitude > latitudelongitude[i].x - distanceRadius &&
@@ -89,15 +92,24 @@ public class GeoLocation : MonoBehaviour
                 longitude < latitudelongitude[i].y + distanceRadius)
             {
                 onSite = true;
-                //text.text = "You're at" + locationName[i] + ".\nSpin Available";
+                SUM.addressText.text = locationName[i];
             }
         }
         if(onSite == false){
+            RB.trueLocation = false;
+            SUM.addressText.text = "You're not near any registered starbucks";
+            SUM.RequestRefreshLocation();
             //replace text with a manager object for that scene because this object has singleton value and therefore shouldnt be 
             //referencing any object directly
             //should this object even be singleton?
 
             //text.text = "You're currently not near any Starbucks, please turn on location on your phone and go near a Starbucks";
+
         }
+    }
+
+    public void RefreshLocation()
+    {
+        StartCoroutine(StartLocationServices());
     }
 }

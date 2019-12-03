@@ -18,76 +18,99 @@ public class RotatingBehaviour : MonoBehaviour
     private Vector3 desiredPosition;
 
     public ObjectSpawner os;
+    public TimeCounter tc;
+    public GeoLocation gl;
     public GameObject particle1;
-    public Animator anm;
+
+    public bool trueCooldown;
+    public bool trueLocation;
+    //public Animator anm;
 
     void Start()
     {
         transform.Rotate(0, 1, 0);
-        anm = GetComponent<Animator>();
+        StartCoroutine(LocationSearch());
+        //anm = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (!spinCDAvailable)
+            CheckSpinAvailability();
 
-        //transform.Rotate(0, currDirection, 0);
+        SpinInput();
+        ConstantRotation();
+        ManualRotationInput();
+    }
+
+    void SpinInput() {
         if (spinCDAvailable)
         {
+            //spins on either direction
             if (swipeControls.SwipeLeft)
             {
                 desiredPosition += Vector3.left;
-                Debug.Log("left");
                 os.OnSpin();
                 spinPower = spinPowerMultiplier;
                 currDirection = 1;
                 spinCDAvailable = false;
+                tc.StartTimer();
             }
             if (swipeControls.SwipeRight)
             {
                 desiredPosition += Vector3.right;
-                Debug.Log("Right");
                 os.OnSpin();
                 spinPower = -spinPowerMultiplier;
                 currDirection = -1;
                 spinCDAvailable = false;
+                tc.StartTimer();
             }
             if (swipeControls.Tap)
             {
-                Debug.Log("Tap");
             }
         }
+    }
 
+    void ConstantRotation() {
         //change with rotation
         //spinObject.transform.position = Vector3.MoveTowards(spinObject.transform.position, desiredPosition, 3f*Time.deltaTime);
         //add an if statement here to enable this spin function
         transform.Rotate(0, spinPower, 0);
 
         //slowly resets spinPower to 0
-        if(spinPower > 0){
+        if (spinPower > 0)
+        {
             spinPower -= slowRate;
-        }else if(spinPower < 0){
+        }
+        else if (spinPower < 0)
+        {
             spinPower += slowRate;
-        }else if(spinPower == 0){
+        }
+        else if (spinPower == 0)
+        {
             spinning = false;
         }
 
-        if (spinPower >= -0.5 && spinPower <= 0.5) {
+        if (spinPower >= -0.5 && spinPower <= 0.5)
+        {
             spinPower = 0;
             spinning = false;
         }
 
-        //add a control statement here that checks if the object has been swiped
+    }
+
+    void ManualRotationInput() {
         //mouse drag object rotation
         if (Input.GetMouseButton(0))
         {
-            anm.SetBool("Shrink", true);
+            //anm.SetBool("Shrink", true);
             cursorCurrPos = Input.mousePosition - cursorPrevPos;
             transform.Rotate(transform.up, -Vector3.Dot(cursorCurrPos, Camera.main.transform.right), Space.World);
-            
+
         }
         else if (spinPower == 0)
         {
-            anm.SetBool("Shrink", false);
+            //anm.SetBool("Shrink", false);
             //constant slow rotation
             if (spinCDAvailable == true)
             {
@@ -95,7 +118,27 @@ public class RotatingBehaviour : MonoBehaviour
             }
         }
         cursorPrevPos = Input.mousePosition;
+    }
 
+    void CheckSpinAvailability() {
+        if (trueCooldown || trueLocation)
+            spinCDAvailable = true;
+        
+        if (gl.onSite)
+        {
+            //not on site
+            //spinCDAvailable = false;
+
+        }
+        else if (gl.locationActive)
+        {
+            //location is not on
+        }
+    }
+
+    public IEnumerator LocationSearch() {
+        CheckSpinAvailability();
+        yield return new WaitForSeconds(5f);
     }
 
     void OnMouseUp() {

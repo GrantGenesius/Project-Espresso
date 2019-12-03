@@ -45,17 +45,11 @@ public class Recipes_Connector : MonoBehaviour
         savedRecipesString = dbr.unlockedDrinks;
         ConvertStringToRecipes();
         ActivateRecipes();
-        
-         
-
-        
 
     }
 
     private void OnDestroy()
     {
-       
-
     }
 
     public void SavingTemporary()

@@ -6,8 +6,9 @@ using TMPro;
 
 public class TimeCounter : MonoBehaviour
 {
-    DB_General dbg;
     public TextMeshProUGUI timerDisplay;
+    public TextMeshProUGUI timerNotification;
+    public RotatingBehaviour rotatingBehaviour;
     private float miliSecond;
     private string minute = "";
     private string second = "";
@@ -22,10 +23,10 @@ public class TimeCounter : MonoBehaviour
 
     void Start()
     {
-        dbg = FindObjectOfType<DB_General>();
-        startTime *= 60;
-        miliSecond = Time.time;
-        StartTimer();
+        StopTimer();
+        //startTime *= 60;
+        //miliSecond = Time.time;
+        //StartTimer();
     }
 
     //void FixedUpdate()
@@ -44,6 +45,7 @@ public class TimeCounter : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (timerStart == true)
         {
             minutes = startTime / 60;
@@ -61,22 +63,31 @@ public class TimeCounter : MonoBehaviour
             {
                 timerFinished = true;
                 StopTimer();
-                timerDisplay.text = "0:00";
-                dbg._15MinPassed = true;
+                DB_General.instance._15MinPassed = true;
             }
         }
     }
 
+    [ContextMenu("Start Timer")]
     public void StartTimer()
     {
         startTime = 15 * 60;
         timerFinished = false;
         timerStart = true;
+        timerNotification.text = "COOLDOWN";
+        rotatingBehaviour.trueCooldown = false;
+        //rotatingBehaviour.spinCDAvailable = false;
     }
 
 
+    [ContextMenu("Stop Timer")]
     public void StopTimer()
     {
         timerStart = false;
+        startTime = 0;
+        timerDisplay.text = "0:00";
+        timerNotification.text = "SPIN AVAILABLE";
+        rotatingBehaviour.trueCooldown = true;
+        //rotatingBehaviour.spinCDAvailable = true;
     }
 }

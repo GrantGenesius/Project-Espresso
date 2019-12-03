@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectSpawner : MonoBehaviour
 {
     public Rigidbody2D spawnedObjects;
     public GameObject spawnPoint;
     public GameObject particle1;
+    public Button objectViewButton;
+    public Button locationSpinButton;
 
 
     public void OnSpin()
@@ -17,10 +20,14 @@ public class ObjectSpawner : MonoBehaviour
     }
 
     public IEnumerator SpawnSequence(int duration){
+        locationSpinButton.interactable = false;
+        objectViewButton.interactable = false;
         InvokeRepeating("SpawnObjects", 0.0f, 0.1f);
         yield return new WaitForSeconds(duration);
         CancelInvoke("SpawnObjects");
 
+        locationSpinButton.interactable = true;
+        objectViewButton.interactable = true;
         yield return new WaitForSeconds(duration * 3);
         //particle1.SetActive(false);
     }
