@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NameGuessManager : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class NameGuessManager : MonoBehaviour
 
     public Text logText;
 
-    // Start is called before the first frame update
     void Start()
     {
         RandomName();
