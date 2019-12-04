@@ -7,11 +7,13 @@ using TMPro;
 public class NameGuessManager : MonoBehaviour
 {
     public string[] name;
-    public Text[] wrongName;
-    public InputField nameInput;
+    public string[] correctNames;
+    public string[] mispelledNames;
+    public TextMeshProUGUI[] wrongNameDisplay;
+    public TMP_InputField nameInput;
     private int randNumber;
 
-    public Text logText;
+    public TextMeshProUGUI logText;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class NameGuessManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            logText.text = "Guess the correct name!";
             RandomName();
         }
     }
@@ -40,12 +43,12 @@ public class NameGuessManager : MonoBehaviour
 
     public void RandomName()
     {
-        logText.text = "Guess The Name";
+        logText.text = "Guess the correct name!";
         nameInput.text = "";
         randNumber = Random.Range(0, name.Length / 4);
         for (int i = 0; i < 3; i++)
         {
-            wrongName[i].text = "" + name[(randNumber * 4) + i];
+            wrongNameDisplay[i].text = "" + name[(randNumber * 4) + i];
         }
     }
 }
