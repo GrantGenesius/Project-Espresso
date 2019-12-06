@@ -49,9 +49,9 @@ public class PlantTimer : MonoBehaviour
 
         dbg = FindObjectOfType<DB_General>();
         dbga = FindObjectOfType<DB_Garden>();
-        //ns = FindObjectOfType<NavigationSystem>();
+        ns = FindObjectOfType<NavigationSystem>();
         ns.LoadGarden();
-        ReduceMoistCooldown();
+        //ReduceMoistCooldown();
         for(int i = 0; i < timerHasStarted.Length; i++)
         {
             if (moisturizesCooldown[i] > 0)
@@ -106,24 +106,30 @@ public class PlantTimer : MonoBehaviour
     [ContextMenu("Reduce_MoistCD")]
     public void ReduceMoistCooldown()
     {
+        print("hhaiiaia");
         int counter = 0;
-        foreach (float x in moisturizesCooldown) {
-            if (dbg._24HrsPassed == true) {
-                dbg.hourPassed = 24;
-            }
-            else if(moisturizesCooldown[counter] > 0)
+        foreach (float x in moisturizesCooldown)
+        {
+            if (dbg._24HrsPassed == true)
             {
-              moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
-                        if(moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))
-                        {
-                            moisturizesCooldown[counter] = 0;
-                            waterLevel[counter] += 10;
-                            timerHasStarted[counter] = false;
-                        }
-                        counter++;
+                moisturizesCooldown[counter] = 0;
+                waterLevel[counter] += 10;
+                timerHasStarted[counter] = false;
+                counter++;
+            }
+            else if (moisturizesCooldown[counter] > 0)
+            {
+                moisturizesCooldown[counter] -= ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed));
+                if (moisturizesCooldown[counter] < ((dbg.hourPassed * 3600) + (dbg.minutePassed * 60) + (dbg.secondPassed)))
+                {
+                    moisturizesCooldown[counter] = 0;
+                    waterLevel[counter] += 10;
+                    timerHasStarted[counter] = false;
+                }
+                counter++;
 
             }
-          
+
         }
 
     }

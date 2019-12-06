@@ -46,7 +46,7 @@ public class PlantSystem : MonoBehaviour
     {
         amountWatering = pt.waterLevel[idx];
         
-        IncreaseAmountofWater();
+        //IncreaseAmountofWater();
         //TimeDisplay(idx);
        // ActivateDisplay();
         WateringStatus();
@@ -94,20 +94,20 @@ public class PlantSystem : MonoBehaviour
 
    
 
-    public void IncreaseAmountofWater()
-    {
-        if (!pt.timerHasStarted[idx])
-        {
-            pt.waterLevel[idx] += holderWater;
-            holderWater = 0;
-        }
+    //public void IncreaseAmountofWater()
+    //{
+    //    if (!pt.timerHasStarted[idx])
+    //    {
+    //        pt.waterLevel[idx] += holderWater;
+    //        holderWater = 0;
+    //    }
 
-        if (pt.timerHasStarted[idx])
-        {
-            holderWater = 10;
-        }
-        //ns.SaveGarden();
-    }
+    //    if (pt.timerHasStarted[idx])
+    //    {
+    //        holderWater = 10;
+    //    }
+    //    //ns.SaveGarden();
+    //}
 
     public void HarvestTree()
     {

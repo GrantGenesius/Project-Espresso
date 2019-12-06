@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DB_General : MonoBehaviour
 {
+    public PlantTimer pt;
 
     float stopwatch_seconds;
 
@@ -217,6 +218,8 @@ public class DB_General : MonoBehaviour
         datePassed = hourPassed / 24;
         monthPassed = datePassed / 30;
         yearPassed = monthPassed / 12;
+
+        pt.ReduceMoistCooldown();
     }
 
     #region savedata functions

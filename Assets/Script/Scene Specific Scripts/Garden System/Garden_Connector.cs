@@ -20,7 +20,7 @@ public class Garden_Connector : MonoBehaviour
         pt.ConvertStringtoPlantID();
         pt.ns = ns;
         loadPlant();
-        ReduceMoistCooldown();
+       // ReduceMoistCooldown();
     }
 
     public void Awake()
@@ -31,11 +31,12 @@ public class Garden_Connector : MonoBehaviour
         dbg = FindObjectOfType<DB_General>();
         dbGarden = FindObjectOfType<DB_Garden>();
         
-        ns.LoadGarden();
-        pt.waterLevel = growthPlantLevelHolder;
+       // ns.LoadGarden();
+       // pt.waterLevel = growthPlantLevelHolder;
     }
     public void ReduceMoistCooldown()
     {
+        print("haihai");
         int counter = 0;
         foreach (float x in pt.moisturizesCooldown)
         {
@@ -60,6 +61,11 @@ public class Garden_Connector : MonoBehaviour
             }
 
         }
+        dbg._24HrsPassed = false;
+        dbg._15MinPassed = false;
+        dbg.hourPassed = 0;
+        dbg.minutePassed = 0;
+        dbg.secondPassed = 0;
 
     }
 

@@ -7,6 +7,7 @@ public class IngridientDrag : MonoBehaviour
 {
 
     public DB_Garden dbga;
+    public PlantTimer pt;
 
     public Vector3 initiateSize;
     private float deltaX, deltaY;
@@ -42,6 +43,7 @@ public class IngridientDrag : MonoBehaviour
         bil = FindObjectOfType<BrewIngridientList>();
         initiateSize = GetComponent<SpriteRenderer>().transform.localScale;
         dbga = FindObjectOfType<DB_Garden>();
+        pt = FindObjectOfType<PlantTimer>();
         locked = false;
         onTarget = false;
        
@@ -97,6 +99,7 @@ public class IngridientDrag : MonoBehaviour
             
             GameObject g = Instantiate(plantResult,landingPosition.transform.position, Quaternion.identity) ;
             g.GetComponent<PlantSystem>().currentTanahPlantSystem = currentTanahDrag;
+            pt.plantIDHolder[currentTanahDrag.GetComponent<GroundController>().idxGround] = g.GetComponent<PlantSystem>().typeOfPlant;
             //g.GetComponent<PlantSystem>().typeOfPlant = ingridientId-1;
             
             //print("kepanggil");

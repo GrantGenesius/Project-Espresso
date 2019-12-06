@@ -233,7 +233,7 @@ public class ServerTimeManager : MonoBehaviour
 
         dbg._OnLoadData_General();
         dbg.GetTimePassed();
-        pt.ReduceMoistCooldown();
+        //pt.ReduceMoistCooldown();
     }
 
     void Start()
