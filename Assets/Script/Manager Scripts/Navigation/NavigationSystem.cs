@@ -18,19 +18,6 @@ public class NavigationSystem : MonoBehaviour
     }
 
 
-    public void _OnOpenClose()
-    {
-        if (navigationActive)
-        {
-            anim.SetBool("Open", false);
-            navigationActive = false;
-        }
-        else
-        {
-            anim.SetBool("Open", true);
-            navigationActive = true;
-        }
-    }
 
     public void _OnSceneManagement(string levelName)
     {
@@ -74,10 +61,10 @@ public class NavigationSystem : MonoBehaviour
         }
     }
 
-    void OnApplicationPause() 
-    {
-        SaveGarden();
-    }
+    //void OnApplicationPause() 
+    //{
+    //    SaveGarden();
+    //}
 
     public void OnApplicationQuit()
     {

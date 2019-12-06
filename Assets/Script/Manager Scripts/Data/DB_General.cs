@@ -260,8 +260,8 @@ public class DB_General : MonoBehaviour
     }
 
     void Start() {
-        //_OnLoadData_General();
-        //GetTimePassed();
+        _OnLoadData_General();
+        GetTimePassed();
         //transform.parent = null;
     }
 
@@ -271,9 +271,39 @@ public class DB_General : MonoBehaviour
 
     }
 
-    void OnApplicationPause() {
-        OnApplicationQuit();
-    }
+    //void OnApplicationPause() {
+    //    int stopwatch;
+    //    int extraSeconds;
+    //    int extraMinutes;
+    //    int extraHours;
+
+    //    stopwatch = Mathf.RoundToInt(stopwatch_seconds);
+    //    extraHours = (stopwatch / 3600);
+    //    extraMinutes = ((stopwatch - (extraHours * 3600)) / 60);
+    //    extraSeconds = stopwatch % 60;
+
+    //    getHour += extraHours;
+    //    getMinute += extraMinutes;
+    //    getSecond += extraSeconds;
+
+    //    while (getSecond > 59)
+    //    {
+    //        getMinute++;
+    //        getSecond -= 60;
+    //    }
+    //    while (getMinute > 59)
+    //    {
+    //        getHour++;
+    //        getMinute -= 60;
+    //    }
+    //    while (getHour > 23)
+    //    {
+    //        getHour -= 24;
+    //        getDate++;
+    //    }
+
+    //    _OnSaveData_General();
+    //}
 
     void OnApplicationQuit() {
         int stopwatch;

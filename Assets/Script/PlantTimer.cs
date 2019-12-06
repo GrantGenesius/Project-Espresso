@@ -49,7 +49,7 @@ public class PlantTimer : MonoBehaviour
 
         dbg = FindObjectOfType<DB_General>();
         dbga = FindObjectOfType<DB_Garden>();
-        ns = FindObjectOfType<NavigationSystem>();
+        //ns = FindObjectOfType<NavigationSystem>();
         ns.LoadGarden();
         ReduceMoistCooldown();
         for(int i = 0; i < timerHasStarted.Length; i++)

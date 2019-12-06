@@ -558,7 +558,7 @@ MonoBehaviour:
   getMonth: 12
   getYear: 2200
   _15MinPassed: 0
-  _24HrsPassed: 1
+  _24HrsPassed: 0
   hourPassed: 0
   minutePassed: 0
   secondPassed: 0

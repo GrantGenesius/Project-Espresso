@@ -18,6 +18,7 @@ public class Garden_Connector : MonoBehaviour
     void Start()
     {
         pt.ConvertStringtoPlantID();
+        pt.ns = ns;
         loadPlant();
         ReduceMoistCooldown();
     }
@@ -30,8 +31,8 @@ public class Garden_Connector : MonoBehaviour
         dbg = FindObjectOfType<DB_General>();
         dbGarden = FindObjectOfType<DB_Garden>();
         
-        //ns.LoadGarden();
-        //pt.waterLevel = growthPlantLevelHolder;
+        ns.LoadGarden();
+        pt.waterLevel = growthPlantLevelHolder;
     }
     public void ReduceMoistCooldown()
     {
