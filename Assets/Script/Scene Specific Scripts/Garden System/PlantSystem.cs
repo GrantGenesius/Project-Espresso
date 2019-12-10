@@ -55,7 +55,6 @@ public class PlantSystem : MonoBehaviour
     public void OnMouseDown()
     {
         HarvestTree();
-        Debug.Log("Terbakar");
     }
 
     public void WateringStatus()

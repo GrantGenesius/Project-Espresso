@@ -152,7 +152,7 @@ public class BrewingSystem : MonoBehaviour
     
     public void _OnResetDrink()
     {
-        Debug.Log("wooo");
+        //Debug.Log("wooo");
         numberOfSlot = 0;
         comparingSlot = "";
        
@@ -229,7 +229,7 @@ public class BrewingSystem : MonoBehaviour
         if(couponClaim != -1)
         {
             drinkResult.gameObject.SetActive(false);
-            print("you get" + couponClaim);
+            //print("you get" + couponClaim);
             //Nanti dipake buat coupon claim
             couponClaim = -1;
         }

@@ -106,7 +106,6 @@ public class PlantTimer : MonoBehaviour
     [ContextMenu("Reduce_MoistCD")]
     public void ReduceMoistCooldown()
     {
-        print("hhaiiaia");
         int counter = 0;
         foreach (float x in moisturizesCooldown)
         {
