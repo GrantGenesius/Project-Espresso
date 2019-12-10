@@ -545,18 +545,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71fb55e24c5dcc8469f5190d230cde96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hour: 23
-  minute: 59
-  second: 59
-  date: 31
-  month: 12
-  year: 2200
-  getHour: 23
-  getMinute: 59
-  getSecond: 59
-  getDate: 31
-  getMonth: 12
-  getYear: 2200
+  pt: {fileID: 446775137}
+  hour: 0
+  minute: 0
+  second: 0
+  date: 0
+  month: 0
+  year: 0
+  getHour: 0
+  getMinute: 0
+  getSecond: 0
+  getDate: 0
+  getMonth: 0
+  getYear: 0
   _15MinPassed: 0
   _24HrsPassed: 0
   hourPassed: 0
