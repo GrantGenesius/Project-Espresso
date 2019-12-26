@@ -22,6 +22,7 @@ public class Recipes_Connector : MonoBehaviour
     public Image drinkImageResult;
     public Image[] allIngridientDetails;
     public char[] characterConverter;
+    public int allRecipesSlot;
 
     public int currentActiveRecipes;
 
@@ -45,6 +46,7 @@ public class Recipes_Connector : MonoBehaviour
         savedRecipesString = dbr.unlockedDrinks;
         ConvertStringToRecipes();
         ActivateRecipes();
+        
 
     }
 
@@ -61,8 +63,10 @@ public class Recipes_Connector : MonoBehaviour
 
     public void _OnClickRecipes(int idx)
     {
+        allRecipesSlot = 0;
         currentActiveRecipes = idx - 1;
         idx = idx - 1;
+        
         if (recipesUnlocked[idx])
         {
            
@@ -85,6 +89,13 @@ public class Recipes_Connector : MonoBehaviour
             for (int i = bil.codeDrink[idx].Length; i < allIngridientDetails.Length; i++)
             {
                 allIngridientDetails[i].gameObject.SetActive(false);
+            }
+
+            for (int i= 0; i < characterConverter.Length; i++){
+                if(characterConverter[i] != '\0')
+                {
+                    allRecipesSlot++;
+                }
             }
 
         }
@@ -146,7 +157,7 @@ public class Recipes_Connector : MonoBehaviour
         }
     }
     
-
+ 
     public void _OnBrewWithRecipes()
     {
         bool canProceed = true;
@@ -173,9 +184,13 @@ public class Recipes_Connector : MonoBehaviour
         
         if(canProceed)
         {
-            bs.comparingSlot = bil.codeDrink[currentActiveRecipes];
+            recipes.SetActive(false);
+            bs.numberOfSlot = allRecipesSlot;
+            bs.inputIngridientSlot = characterConverter;
+           
             bs._OnBrewDrink();
-           _OnCloseRecipeDetails();
+             _OnCloseRecipeDetails();
+           
 
         }
         

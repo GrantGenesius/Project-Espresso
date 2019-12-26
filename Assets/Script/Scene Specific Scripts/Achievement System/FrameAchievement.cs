@@ -50,7 +50,7 @@ public class FrameAchievement : MonoBehaviour
         achievementIcon.sprite = dba.allDrink[recipesIndex];
         achievementIcon.SetNativeSize();
         achievementIcon.rectTransform.sizeDelta = new Vector2(achievementIcon.rectTransform.sizeDelta.x * (float)0.13, achievementIcon.rectTransform.sizeDelta.y * (float)0.13);
-        achievementIcon.rectTransform.position = new Vector3(startingPosition.x + 22, startingPosition.y + 27, startingPosition.z) ;
+        achievementIcon.rectTransform.position = new Vector3(startingPosition.x + 15, startingPosition.y + 17, startingPosition.z) ;
     }
 
     // Update is called once per frame
@@ -80,7 +80,7 @@ public class FrameAchievement : MonoBehaviour
         imageResult.sprite = dba.allDrink[recipesIndex];
         imageResult.SetNativeSize();
         imageResult.rectTransform.sizeDelta = new Vector2(imageResult.rectTransform.sizeDelta.x * (float)0.4, imageResult.rectTransform.sizeDelta.y * (float)0.4);
-        imageResult.rectTransform.position = startingPosition;
+        imageResult.rectTransform.position = new Vector2(startingPosition.x, startingPosition.y);
         nameResult.text = dba.allDrinkName[recipesIndex];
 
     }

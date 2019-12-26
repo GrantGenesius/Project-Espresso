@@ -12,6 +12,7 @@ public class BrewingSystem : MonoBehaviour
     public Recipes_Connector rc;
     //reference objects
     public Image drinkResult;
+    public Image couponResult;
     
     public Image []categoryImage;
     public Image[] itemSlot;
@@ -59,7 +60,7 @@ public class BrewingSystem : MonoBehaviour
 
     //brewing vars
     [SerializeField]
-    char[] inputIngridientSlot;
+    public char[] inputIngridientSlot;
     [SerializeField]
     public string comparingSlot;
 
@@ -226,9 +227,10 @@ public class BrewingSystem : MonoBehaviour
     }
     public void _OnClaimCoupon()
     {
+
         if(couponClaim != -1)
         {
-            drinkResult.gameObject.SetActive(false);
+            
             print("you get" + couponClaim);
             //Nanti dipake buat coupon claim
             couponClaim = -1;
@@ -237,6 +239,40 @@ public class BrewingSystem : MonoBehaviour
         
     }
   
+    public string GotTheDrink(string comparing)
+    {
+        string result = "";
+        for (int i = 0; i < bil.codeDrink.Length; i++)// bil disini bakal diubah jadi Ingridient Database
+        {
+            if (comparingSlot == bil.codeDrink[i])// bil disini bakal diubah jadi Ingridient Database
+            {
+                Vector3 startingPosition = drinkResult.rectTransform.position;
+                Vector3 startingPosition2 = couponResult.rectTransform.position;
+                //drink ID exists
+                result = bil.nameDrink[i];
+                drinkResult.sprite = drinkSprites[i];
+                couponResult.sprite = drinkSprites[i];
+                drinkResult.SetNativeSize();
+                couponResult.SetNativeSize();
+                drinkResult.rectTransform.sizeDelta = new Vector2(drinkResult.rectTransform.sizeDelta.x * (float)0.12, drinkResult.rectTransform.sizeDelta.y * (float)0.12);
+                couponResult.rectTransform.sizeDelta = new Vector2(drinkResult.rectTransform.sizeDelta.x, drinkResult.rectTransform.sizeDelta.y);
+                drinkResult.rectTransform.position = startingPosition;
+                couponResult.rectTransform.position = startingPosition2;
+
+                Debug.Log("eyyy brah you got " + result);
+                drinkResult.gameObject.SetActive(true);
+                couponResult.gameObject.SetActive(true);
+                rc.recipesUnlocked[i] = true;
+                couponClaim = i;
+
+                rc.SavingTemporary();
+                OpenBrewingSuccessPanel(i);
+                dbr.couponsMade++;
+                break;
+            }
+        }
+        return result;
+    }
 
     public void _OnBrewDrink() {
         Debug.Log("OnBrewDrink");
@@ -248,36 +284,9 @@ public class BrewingSystem : MonoBehaviour
         {
             comparingSlot += inputIngridientSlot[i];
         }
-        //print(comparingSlot);
+        GotTheDrink(comparingSlot);
 
-        //searches the drink ID 
-        string result = "";
-        for(int i=0; i< bil.codeDrink.Length; i++)// bil disini bakal diubah jadi Ingridient Database
-        {
-            if(comparingSlot == bil.codeDrink[i])// bil disini bakal diubah jadi Ingridient Database
-            {
-                Vector3 startingPosition = drinkResult.rectTransform.position;
-                    
-                //drink ID exists
-                result = bil.nameDrink[i];
-                drinkResult.sprite = drinkSprites[i];
-                drinkResult.SetNativeSize();
-                drinkResult.rectTransform.sizeDelta = new Vector2(drinkResult.rectTransform.sizeDelta.x * (float)0.12, drinkResult.rectTransform.sizeDelta.y *(float)0.12);
-                drinkResult.rectTransform.position = startingPosition;
-
-                Debug.Log("eyyy brah you got " + result);
-                drinkResult.gameObject.SetActive(true);
-                rc.recipesUnlocked[i] = true;
-                couponClaim = i;
-
-                rc.SavingTemporary();
-                OpenBrewingSuccessPanel(i);
-                dbr.couponsMade++;
-                break;
-            }
-        }
-        //drink not found
-        if(result == "")
+        if(GotTheDrink(comparingSlot) == "")
         {
             Debug.Log("Sorry brah you dont get anything");
             drinkResult.sprite = null;
@@ -326,6 +335,7 @@ public class BrewingSystem : MonoBehaviour
 
     public void _OnCloseFailedSuccessPanel()
     {
+        _OnClaimCoupon();
         failedBrewingFrame.SetActive(false);
     }
 }
