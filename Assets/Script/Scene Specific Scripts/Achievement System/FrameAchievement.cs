@@ -50,7 +50,7 @@ public class FrameAchievement : MonoBehaviour
         achievementIcon.sprite = dba.allDrink[recipesIndex];
         achievementIcon.SetNativeSize();
         achievementIcon.rectTransform.sizeDelta = new Vector2(achievementIcon.rectTransform.sizeDelta.x * (float)0.13, achievementIcon.rectTransform.sizeDelta.y * (float)0.13);
-        achievementIcon.rectTransform.position = new Vector3(startingPosition.x + 15, startingPosition.y + 17, startingPosition.z) ;
+        achievementIcon.rectTransform.position = new Vector3(startingPosition.x, startingPosition.y, startingPosition.z) ;
     }
 
     // Update is called once per frame
